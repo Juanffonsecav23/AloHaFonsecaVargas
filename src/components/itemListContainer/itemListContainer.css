@@ -2,4 +2,11 @@ h1{
     background-color: white;
     color: blue;
     padding-left: 15%;
+    animation: 3s alternate h1Title;
 }
+.cardILC{
+  border-radius: 5px;
+  box-shadow: inset;
+  border: solid grey;
+}
+  

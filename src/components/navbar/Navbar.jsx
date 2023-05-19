@@ -1,7 +1,6 @@
-import './navbar.css';
-import DropdownAH from '../dropdown/DropdownAH';
-import CarWidget from '../carWidget/CarWidget';
-import ItemListContainer from '../itemListContainer/ItemListContainer';
+import './Navbar.css';
+import DropdownAH from '../Dropdown/DropdownAH';
+import CarWidget from '../CarWidget/CarWidget';
 export default function Navbar () {
 
     return (
@@ -9,22 +8,21 @@ export default function Navbar () {
             <nav className="header">
                 <ul className="navbarFV">
                     <li>
-                        <a href=""><img src="src/imagenes/alojamiento.png" alt="" className='logo'/></a>
+                        <a href=""><img src="src/assets/imagenesCuartos/AloHa/LogoAloHaEnBlanco.png" alt="" className='logo'/></a>
                     </li>
                     <DropdownAH/>
                     <li>
                         <a href="">Espacios</a>
                     </li>
                     <li>
-                        <a href="">Contacto</a>
+                        <a href="">Reglas/Recomendaciones</a>
                     </li>
                     <li>
-                        <a href="">Reglas</a>
+                        <a href="">Contacto</a>
                     </li>
                     <CarWidget/>
                 </ul>
             </nav>
-            <ItemListContainer greeting="Bienvenid@ a AloHa - Alojamiento Habitacional"/>
         </div>
     )
 }

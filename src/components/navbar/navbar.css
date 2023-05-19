@@ -1,10 +1,14 @@
 nav{
-    background-color: blue;
+    background-color: orange;
 }
 
 .header{
     width: 100%;
+    position: static;
   }
+/* .Body{
+    padding-top: 70px;
+} */
 .navbarFV{
     display: flex;
     flex-flow: row nowrap;
@@ -15,21 +19,23 @@ nav{
     text-decoration: none;
     padding-top: 5px;
     padding-bottom: 5px;
+    margin-bottom: 0;
+    position: static;
   }
 .logo{
-    width: 50px;
+    width: 80px;
     height: auto;
     border-radius: 50%;
 }
 #dropdown{
     font-family: Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
     font-weight: 5fr;
-    background-color: blue;
+    background-color: orange;
     color: white;
     border: none;
 
 }
 .dropdownColor{
-    background-color: blue;
+    background-color: orange;
     color: white;
 }
