@@ -1,41 +1,43 @@
 /* AsyncMock - servicioMock / backend/nube/api */
 import { useEffect, useState } from "react";
-import "./itemdetail.css";
+import "./ItemDetail.css";
 import ItemCount from "../ItemCount/ItemCount";
 import habitaciones from "../../data/habitaciones";
+import { useParams } from "react-router-dom";
 
-/* AsnyMock ----------------------------------------------- */
-function getItemData() {
+
+function getRoomData(idURL) {
   return new Promise((resolve) => {
     setTimeout(() => {
-      resolve(habitaciones[0]);
-    }, 2000);
+      const requestedRoom = habitaciones.find(
+        (item) => item.id === Number(idURL)
+      );
+      resolve(requestedRoom);
+    }, 1000);
   });
 }
-/* ------------------------------------------------ */
+
 
 function ItemDetailContainer() {
-  // estado
-  /* /detalle/10 */
-  const [room, setRoom] = useState({});
 
-  //efecto
+  const [room, setRoom] = useState({});
+  const id = useParams().id;
+
   useEffect(() => {
-    getItemData().then((respuesta) => {
+    getRoomData(id).then((respuesta) => {
       setRoom(respuesta);
     });
-  }, []);
+  }, [id]);
 
-  //UI
   return (
-    /* <ItemDetail .../> */
     <div className="card-detail_main">
       <div className="card-detail_img">
-        <img src={room.img1} alt={room.title} />
+        <img src={room.img} alt={room.title} />
       </div>
       <div className="card-detail_detail">
         <h1>{room.title}</h1>
         <h2 className="priceTag">$ {room.price} Cop / Mes</h2>
+        <small>{room.category}</small>
         <small>{room.description}</small>
         <ItemCount stock={room.capacidad} />
       </div>

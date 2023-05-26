@@ -1,16 +1,18 @@
 import { useState } from "react";
 import "./item.css";
+import { Link } from "react-router-dom";
 
 
-function CardDescription({ price}) {
+function CardDescription({ price, category}) {
   return (
     <div className="item-card_detail">
       <h5 className="item-card_price-tag">$ {price} COP /mes</h5>
+      <small>{category}</small>
     </div>
   );
 }
 
-function Item({ title, img1, price, category, description }) {
+function Item({ title, img, price, category, description, id }) {
   const [isFavorite, setIsFavorite] = useState(false);
   let classNameFavorite;
 
@@ -20,22 +22,19 @@ function Item({ title, img1, price, category, description }) {
     classNameFavorite = "item-card_favicon favorite";
   }
 
-  /* let classNameFavorite = isFavorite
-    ? "item-card_favicon favorite"
-    : "item-card_favicon"; */
-
   function handleClickFav() {
     console.log("ok");
     setIsFavorite(!isFavorite);
   }
 
   return (
+    <Link to={`/room/${id}`}>
     <div className="item-card">
       <button onClick={handleClickFav} className={classNameFavorite}>
         ♥
       </button>
       <div className="item-card_img">
-        <img src={img1} alt="imagen"></img>
+        <img src={img} alt="imagen"></img>
       </div>
       <div className="item-card_header">
         <h5>{title}</h5>
@@ -45,6 +44,7 @@ function Item({ title, img1, price, category, description }) {
         <button className="btn-ver-detalles">Ver detalles</button>
       </div>
     </div>
+    </Link>
   );
 }
 

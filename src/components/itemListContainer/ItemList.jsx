@@ -1,11 +1,11 @@
 import Item from "../Item/Item";
 import Flex from "../Flex/Flex";
 
-function ItemList({ rooms }) {
+function ItemList({ room }) {
   return (
     <div>
       <Flex title="Habitaciones">
-        {rooms.map((itemInArray) => (
+        {room.map((itemInArray) => (
           <Item key={itemInArray.id} {...itemInArray} />
         ))}
       </Flex>

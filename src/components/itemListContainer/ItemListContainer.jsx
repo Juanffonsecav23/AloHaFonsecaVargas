@@ -1,29 +1,33 @@
 import { useEffect, useState } from "react";
-
-/* AsyncMock - servicioMock / backend/nube/api */
+import { useParams } from "react-router-dom";
 import ItemList from "./ItemList";
 import habitaciones from "../../data/habitaciones";
 
 function getData() {
   return new Promise((resolve) => {
-    setTimeout(() => {
-      resolve(habitaciones);
-    }, 2000);
+    setTimeout(() => resolve(habitaciones)), 1000;
   });
 }
-/* ---------------------------------------------- */
+
 
 function ItemListContainer() {
-  let [rooms, setrooms] = useState([]);
+  let [room, setRoom] = useState([]);
+  const { categoryid } = useParams();
 
   useEffect(() => {
     getData().then((respuesta) => {
-      console.log("llegaron los datos", respuesta);
-      setrooms(respuesta);
+      if (categoryid) {
+        const filterRooms = respuesta.filter(
+          (room) => room.category === categoryid
+        );
+        setRoom(filterRooms);
+      } else {
+        setRoom(respuesta);
+      }
     });
-  }, []);
+  }, [categoryid]);
 
-  return <ItemList rooms={rooms}/> ;
+  return <ItemList room={room} />;
 }
 
 export default ItemListContainer;

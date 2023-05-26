@@ -7,7 +7,7 @@ function Flex({ children, title }) {
   
     return (
       <div>
-        <h2 style={{ color: "orange" }}>{title}</h2>
+        <h1 style={{ color: "var(--naranja-titulos)", marginLeft: "10px" }}>{title}</h1>
         <div style={flexStyle}>{children}</div>
       </div>
     );

@@ -20,7 +20,7 @@ a {
   text-decoration: none;
 }
 a:hover {
-  color: blue;
+  color: black;
 }
 
 body {
@@ -43,7 +43,7 @@ button {
   cursor: pointer;
 }
 button:hover{
-  color: blue;
+  color: black;
 }
 button:focus,
 button:focus-visible {
