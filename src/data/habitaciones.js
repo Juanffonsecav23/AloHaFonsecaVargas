@@ -24,7 +24,7 @@ const habitaciones = [
         img: "/src/assets/imagenesCuartos/AloHa/cuarto_3.jpeg",
         price: '1.400.000',
         description: 'Descrpcion general de la habitacion',
-        capacidad: 2,
+        capacidad: 4,
     },
     {
         id: 4,

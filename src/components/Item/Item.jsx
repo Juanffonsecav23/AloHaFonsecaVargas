@@ -22,8 +22,9 @@ function Item({ title, img, price, category, description, id }) {
     classNameFavorite = "item-card_favicon favorite";
   }
 
-  function handleClickFav() {
-    console.log("ok");
+  function handleClickFav(event) {
+    event.preventDefault();
+    event.stopPropagation();
     setIsFavorite(!isFavorite);
   }
 
@@ -33,8 +34,9 @@ function Item({ title, img, price, category, description, id }) {
       <button onClick={handleClickFav} className={classNameFavorite}>
         ♥
       </button>
+      
       <div className="item-card_img">
-        <img src={img} alt="imagen"></img>
+      <img src={img} alt="imagen"></img>
       </div>
       <div className="item-card_header">
         <h5>{title}</h5>
@@ -43,8 +45,9 @@ function Item({ title, img, price, category, description, id }) {
         <CardDescription price={price}  />
         <button className="btn-ver-detalles">Ver detalles</button>
       </div>
+
     </div>
-    </Link>
+    </Link >
   );
 }
 

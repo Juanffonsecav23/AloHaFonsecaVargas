@@ -38,4 +38,5 @@ nav{
 .dropdownColor{
     background-color: orange;
     color: white;
+    border: solid orange;
 }

@@ -89,6 +89,7 @@ a{
   .btn-ver-detalles{
     margin-left: 5px;
     background-color: lightsalmon;
+    border-radius: 50px;
   }
   .btn-ver-detalles:hover{
     color: white;
