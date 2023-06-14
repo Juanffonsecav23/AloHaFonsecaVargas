@@ -1,15 +1,10 @@
+import { Link } from 'react-router-dom';
 import './Footer.css';
 
 function Footer() {
   return (
     <div>
       <footer className="footer">
-      <div className="waves">
-        <div className="wave" id="wave1"></div>
-        <div className="wave" id="wave2"></div>
-        <div className="wave" id="wave3"></div>
-        <div className="wave" id="wave4"></div>
-      </div>
       <ul className="social-icon">
         <li className="social-icon__item"><a className="social-icon__link" href="#">
             <img style={{color:'white'}} src="/src/assets/iconos/facebook.svg" alt="" />
@@ -25,13 +20,12 @@ function Footer() {
           </a></li>
       </ul>
       <ul className="menu">
-        <li className="menu__item"><a className="menu__link" href="#">Home</a></li>
-        <li className="menu__item"><a className="menu__link" href="#">About</a></li>
-        <li className="menu__item"><a className="menu__link" href="#">Services</a></li>
-        <li className="menu__item"><a className="menu__link" href="#">Team</a></li>
-        <li className="menu__item"><a className="menu__link" href="#">Contact</a></li>
+        <li className="menu__item"><Link className="menu__link" to="/">Inicio</Link></li>
+        <li className="menu__item"><a className="menu__link" to="QuienesSomos">Quienes Somos</a></li>
+        <li className="menu__item"><a className="menu__link" to="Habitaciones">Habitaciones</a></li>
+        <li className="menu__item"><Link className="menu__link" to="/contacto">Contacto</Link></li>
       </ul>
-      <p>&copy;2023 Juan Felipe Fonseca Vargas | All Rights Reserved</p>
+      <p>&copy;2023 Juan Felipe Fonseca Vargas</p>
         </footer>
         <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
         <script noModule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>

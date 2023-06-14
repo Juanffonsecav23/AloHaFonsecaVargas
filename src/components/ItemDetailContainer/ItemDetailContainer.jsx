@@ -1,34 +1,60 @@
 /* AsyncMock - servicioMock / backend/nube/api */
-import { useEffect, useState } from "react";
+import { useContext, useEffect, useState } from "react";
 import "./ItemDetail.css";
 import ItemCount from "../ItemCount/ItemCount";
 import habitaciones from "../../data/habitaciones";
-import { useParams } from "react-router-dom";
+import { Link, useParams } from "react-router-dom";
+import Loader from "../Loader/Loader";
+import { cartContext } from "../../context/cartContext";
 
 
 function getRoomData(idURL) {
-  return new Promise((resolve) => {
+  return new Promise((resolve, reject) => {
     setTimeout(() => {
       const requestedRoom = habitaciones.find(
-        (item) => item.id === Number(idURL)
+        (room) => room.id === Number(idURL)
       );
-      resolve(requestedRoom);
+      if(requestedRoom){
+        resolve(requestedRoom);
+      }else
+      reject(new Error("La habitación buscada no ha sido encontrada"))
     }, 1000);
   });
 }
 
 
 function ItemDetailContainer() {
+  const [errors , setErrors] = useState(null)
+  const [room, setRoom] = useState(null);
+  const [countInCart, setCountInCart] = useState(0);
+  const {cart , addItem , removeItem , countTotalPrice , clearCart} = useContext(cartContext);
 
-  const [room, setRoom] = useState({});
+  function onAddToCart(count) {
+    addItem(room , count);
+    setCountInCart(count);
+    alert(`Agregaste ${count} - ${room.title} al carrito`);
+  }
+
   const id = useParams().id;
 
   useEffect(() => {
     getRoomData(id).then((respuesta) => {
       setRoom(respuesta);
-    });
+    })
+    .catch(error => {
+      setErrors(error.message)
+    })
   }, [id]);
 
+if (errors)
+return (
+  <div >
+    <h1>Error</h1>
+    <p>{errors}</p>
+  </div>
+);
+
+if (room) {
   return (
     <div className="card-detail_main">
       <div className="card-detail_img">
@@ -39,10 +65,20 @@ function ItemDetailContainer() {
         <h2 className="priceTag">$ {room.price} Cop / Mes</h2>
         <small>{room.category}</small>
         <small>{room.description}</small>
-        <ItemCount stock={room.capacidad} />
+
+        {countInCart === 0 ? (
+            <ItemCount onAddToCart={onAddToCart} stock={room.capacidad} />
+          ) : (
+            <Link to="/cart" style={{color:"orange"}}>Ir al carrito</Link> 
+          )}
+        {/* <ItemCount stock={room.capacidad} /> */}
       </div>
     </div>
   );
+}else {
+  return(<Loader/>)
+}
+
 }
 
 export default ItemDetailContainer;

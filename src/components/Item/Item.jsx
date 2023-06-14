@@ -1,18 +1,20 @@
 import { useState } from "react";
 import "./item.css";
 import { Link } from "react-router-dom";
+import Button from "../Button/Button";
 
 
 function CardDescription({ price, category}) {
+  
   return (
     <div className="item-card_detail">
-      <h5 className="item-card_price-tag">$ {price} COP /mes</h5>
+      <h5 className="item-card_price-tag">$ {price} M COP /mes</h5>
       <small>{category}</small>
     </div>
   );
 }
 
-function Item({ title, img, price, category, description, id }) {
+function Item({ title, img, price, category, description, id, capacidad }) {
   const [isFavorite, setIsFavorite] = useState(false);
   let classNameFavorite;
 
@@ -28,6 +30,10 @@ function Item({ title, img, price, category, description, id }) {
     setIsFavorite(!isFavorite);
   }
 
+  const stylesButton = {
+    backgroundColor: capacidad === 0 ? "grey" : "inherit",
+  };
+
   return (
     <Link to={`/room/${id}`}>
     <div className="item-card">
@@ -39,11 +45,11 @@ function Item({ title, img, price, category, description, id }) {
       <img src={img} alt="imagen"></img>
       </div>
       <div className="item-card_header">
-        <h5>{title}</h5>
+        <h5>{title}</h5> 
         <small>{category}</small>
         <small><p>{description}</p></small>
-        <CardDescription price={price}  />
-        <button className="btn-ver-detalles">Ver detalles</button>
+        <CardDescription price={price}   />
+        <Button className="btn-ver-detalles" style={stylesButton}>Ver detalles</Button> 
       </div>
 
     </div>

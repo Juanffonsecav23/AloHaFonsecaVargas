@@ -3,11 +3,11 @@ import { useState } from "react";
 import "./itemcount.css";
 import Button from "../Button/Button";
 
-function ItemCount({ stock }) {
+function ItemCount(props) {
   let [count, setCount] = useState(0);
 
   function handleAdd() {
-    if (count < stock) setCount(count + 1);
+    if (count < props.stock) setCount(count + 1);
   }
 
   function handleSubstract() {
@@ -19,7 +19,7 @@ function ItemCount({ stock }) {
       <small>Seleccione la cantidad de personas</small>
       <div className="itemcount_control">
         <Flex>
-          <Button className="btnA" onClick={handleSubstract}>
+          <Button  className="btnA" onClick={handleSubstract}>
             -
           </Button>
           <span className="itemcount_count">{count}</span>
@@ -30,7 +30,7 @@ function ItemCount({ stock }) {
       </div>
 
       <div className="itemcount_btns">
-        <Button className="btnA">Reservar</Button>
+        <Button onClick={() => {props.onAddToCart(count);}} className="btnA">Reservar</Button>
       </div>
     </div>
   );

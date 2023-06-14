@@ -1,9 +1,8 @@
-import Flex from "../Flex/Flex";
 import './QuienesSomos.css';
 
 function QuienesSomos() {
   return (
-    <div className="boxQS">
+    <div className="boxQS" id="QuienesSomos">
         <h1 className="tituloQS">Quienes Somos</h1>
         <div className="flexQS">
             <p className="textoQS">En el Alojamiento Habitacional AloHa nos encargamos de brindarte una experencia gratificante y comoda para tu hospedaje con unas histalaciones premium a un costo economico con todos los servicios incluidos.<br/><br/>

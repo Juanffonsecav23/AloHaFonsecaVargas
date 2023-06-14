@@ -4,13 +4,15 @@ import ItemList from "./ItemList";
 import habitaciones from "../../data/habitaciones";
 
 function getData() {
+  
   return new Promise((resolve) => {
-    setTimeout(() => resolve(habitaciones)), 1000;
+    setTimeout(() => resolve(habitaciones),2000);
   });
 }
 
 
 function ItemListContainer() {
+  let [isLoading , setIsLoading] = useState(true)
   let [room, setRoom] = useState([]);
   const { categoryid } = useParams();
 
@@ -24,10 +26,12 @@ function ItemListContainer() {
       } else {
         setRoom(respuesta);
       }
+    }).finally(()=> {
+      setIsLoading(false)
     });
   }, [categoryid]);
 
-  return <ItemList room={room} />;
+  return <ItemList isLoading={isLoading} room={room} />;
 }
 
 export default ItemListContainer;
