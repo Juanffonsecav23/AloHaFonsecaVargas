@@ -40,3 +40,10 @@
   .card-detail_muted{
     color: #8c8c8e
   }
+  .description{
+    width: 500px;
+  }
+  .InputCalendario{
+    background-color: lightsalmon;
+    border: solid lightsalmon;
+  }

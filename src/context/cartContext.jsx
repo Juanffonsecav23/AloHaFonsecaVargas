@@ -5,6 +5,7 @@ export const cartContext  = createContext ({cart : []})
 export function CartContextProvider ({children}){
 
     const [cart, setCart] = useState([])
+    const [date , setDate] = useState([])
 
     function addItem(room , count) {
         const newCart = [...cart]; 
@@ -42,15 +43,20 @@ export function CartContextProvider ({children}){
         return total
     }/* funcion para la suma total de productos del carrito */
 
-    function countTotalPrice(){
+    function countTotalPrice(countDays){
         let totalPrice = 0;
         cart.forEach((room)=> {
-            totalPrice = (room.price * room.count).toFixed(3);
+            totalPrice = (room.price * countDays).toFixed(3);
         });
-        console.log(totalPrice); 
+        console.log(countDays);
+        console.log(parseInt(totalPrice)); 
         
     }/* funcion para totalizar el precio de los productos agragados */
-
+    /* function totalPriceNigth(countDays) {
+        let
+        const pricePerNigth = countDays* room.price;
+        console.log(pricePerNigth);
+    } */
     function clearCart(emptyCart) {
         setCart(cart.filter(cart => cart.value !== emptyCart))
     }/* funcion para limpiar todos los productos del carrito */

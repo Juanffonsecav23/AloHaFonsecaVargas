@@ -44,7 +44,7 @@ const habitaciones = [
         img2: "/imgRooms/cuarto_4.jpeg",
         img3: "/imgRooms/cuarto_4.jpeg",
         price: 1.400000,
-        description: 'Descrpcion general de la habitacion',
+        description: "The room is located on the second floor of the house and includes everything shown in the pictures A double bed, two nightstands, two table lamps, a closet with hangers, Smart TV, a working spot, and a private bathroom. Natural light in the room and bathroom and a view of the street.",
         capacidad: 2,
     },
     {

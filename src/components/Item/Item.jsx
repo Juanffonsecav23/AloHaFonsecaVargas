@@ -44,7 +44,7 @@ function Item({ title, img, price, category, description, id, capacidad }) {
         <span><button onClick={handleClickFav} className={classNameFavorite}>♥</button></span>
         <h5>{title}</h5> 
         <small>{category}</small>
-        <small><p>{description}</p></small>
+        {/* <small><p>{description}</p></small> */}
         <CardDescription price={price}   />
         <Button className="btn-ver-detalles" style={stylesButton}>Ver detalles</Button> 
       </div>

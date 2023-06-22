@@ -7,7 +7,7 @@ import Footer from "./components/Footer/Footer"
 import { CartContextProvider } from "./context/cartContext"
 import CartView from "./components/CartView/CartView";
 import OrderVerify from "./components/OrderVerify/OrderVerify"
-import { exportData } from "./services/Firebase"
+/* import { exportData } from "./services/Firebase" */
 
 
 
@@ -17,7 +17,7 @@ function App() {
     <CartContextProvider>
       <BrowserRouter>
         <Navbar/>
-        <button onClick={exportData}>Exportar Data</button>
+        {/* <button onClick={exportData}>Exportar Data</button> */}
         <Routes>
           <Route path="/" element={<Homepage/>} />
           <Route path="/room/:id" element={<ItemDetailContainer/>}/>
