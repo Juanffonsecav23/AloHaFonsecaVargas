@@ -37,14 +37,11 @@ function Item({ title, img, price, category, description, id, capacidad }) {
   return (
     <Link to={`/room/${id}`}>
     <div className="item-card">
-      <button onClick={handleClickFav} className={classNameFavorite}>
-        ♥
-      </button>
-      
       <div className="item-card_img">
       <img src={img} alt="imagen"></img>
       </div>
       <div className="item-card_header">
+        <span><button onClick={handleClickFav} className={classNameFavorite}>♥</button></span>
         <h5>{title}</h5> 
         <small>{category}</small>
         <small><p>{description}</p></small>

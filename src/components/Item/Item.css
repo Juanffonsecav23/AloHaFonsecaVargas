@@ -68,23 +68,23 @@ a{
   .item-card_favicon{
     display: none;
     position: absolute;
-    width: 32px;
-    height: 32px;
-    top: 0;
     right: 0;
     border-radius:  50%;
     border: none;
-    margin: 5px 15px;
+    margin: 5px 5px;
     padding: 8px 8px;
     cursor: pointer;
-    background-color: rgb(219, 219, 219);
-    color: #8c8c8e;
+    background-color:transparent;
+    color: salmon;
+  }
+  .item-card_favicon:hover{
+    color: red;
   }
   
   .item-card_favicon.favorite{
     display: block;
-    background-color: rgb(223, 117, 84);
-    color: white;
+    background-color: transparent;
+    color: red;
   }
   .btn-ver-detalles{
     margin-left: 5px;

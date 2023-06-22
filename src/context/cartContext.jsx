@@ -45,9 +45,10 @@ export function CartContextProvider ({children}){
     function countTotalPrice(){
         let totalPrice = 0;
         cart.forEach((room)=> {
-            totalPrice = room.price * room.count
+            totalPrice = (room.price * room.count).toFixed(3);
         });
-        return totalPrice
+        console.log(totalPrice); 
+        
     }/* funcion para totalizar el precio de los productos agragados */
 
     function clearCart(emptyCart) {

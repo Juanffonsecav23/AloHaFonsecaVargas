@@ -1,35 +1,23 @@
 import { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
 import ItemList from "./ItemList";
-import habitaciones from "../../data/habitaciones";
-
-function getData() {
-  
-  return new Promise((resolve) => {
-    setTimeout(() => resolve(habitaciones),2000);
-  });
-}
+import {getCategoryData, getData} from "../../services/Firebase"
 
 
 function ItemListContainer() {
   let [isLoading , setIsLoading] = useState(true)
   let [room, setRoom] = useState([]);
-  const { categoryid } = useParams();
+  const { categoryId } = useParams();
+
+  const fetchData = categoryId === undefined ? getData : getCategoryData;
 
   useEffect(() => {
-    getData().then((respuesta) => {
-      if (categoryid) {
-        const filterRooms = respuesta.filter(
-          (room) => room.category === categoryid
-        );
-        setRoom(filterRooms);
-      } else {
-        setRoom(respuesta);
-      }
-    }).finally(()=> {
+    fetchData(categoryId)
+    .then(respuesta => setRoom(respuesta))
+    .finally(()=> {
       setIsLoading(false)
     });
-  }, [categoryid]);
+  }, [categoryId]);
 
   return <ItemList isLoading={isLoading} room={room} />;
 }

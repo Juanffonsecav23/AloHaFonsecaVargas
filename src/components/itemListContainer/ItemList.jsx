@@ -7,9 +7,7 @@ function ItemList({ room ,isLoading }) {
 
   if (room.length === 0){
     return <h2>No se encontro el producto</h2>
-  }
-
-  return (
+  }else return (
     <div>
       <Flex title="Habitaciones">
         {room.map((roomInArray) => (

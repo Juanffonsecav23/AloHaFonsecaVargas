@@ -2,26 +2,12 @@
 import { useContext, useEffect, useState } from "react";
 import "./ItemDetail.css";
 import ItemCount from "../ItemCount/ItemCount";
-import habitaciones from "../../data/habitaciones";
+
 import { Link, useParams } from "react-router-dom";
 import Loader from "../Loader/Loader";
 import { cartContext } from "../../context/cartContext";
-
-
-function getRoomData(idURL) {
-  return new Promise((resolve, reject) => {
-    setTimeout(() => {
-      const requestedRoom = habitaciones.find(
-        (room) => room.id === Number(idURL)
-      );
-      if(requestedRoom){
-        resolve(requestedRoom);
-      }else
-      reject(new Error("La habitación buscada no ha sido encontrada"))
-    }, 1000);
-  });
-}
-
+import { getRoomData } from "../../services/Firebase";
+import Carrousel from "../Carrousel/Carrousel";
 
 function ItemDetailContainer() {
   const [errors , setErrors] = useState(null)
@@ -58,7 +44,12 @@ if (room) {
   return (
     <div className="card-detail_main">
       <div className="card-detail_img">
+        <Carrousel>
         <img src={room.img} alt={room.title} />
+        <img src={room.img1} alt={room.title} />
+        <img src={room.img2} alt={room.title} />
+        <img src={room.img3} alt={room.title} />
+        </Carrousel>
       </div>
       <div className="card-detail_detail">
         <h1>{room.title}</h1>

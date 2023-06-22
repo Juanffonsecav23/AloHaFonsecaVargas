@@ -9,7 +9,7 @@ export default function Navbar () {
             <nav className="header">
                 <ul className="navbarFV">
                     <li>
-                        <NavLink to="/"><img src="/src/assets/imagenesCuartos/AloHa/LogoAloHaEnBlanco.png" alt="Logo" className='logo'/></NavLink>
+                        <NavLink to="/"><img src="/imgRooms/LogoAloHaEnBlanco.png" alt="Logo" className='logo'/></NavLink>
                     </li>
                     <div className="dropdown ">
                         <button  className="dropdownColor" type="button" data-bs-toggle="dropdown" aria-expanded="false">
