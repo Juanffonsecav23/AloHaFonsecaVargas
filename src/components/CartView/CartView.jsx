@@ -10,6 +10,7 @@ import Flex from "../Flex/Flex";
 function CartView() {
     const {cart , removeItem , clearCart , countTotalPrice } = useContext(cartContext)
     const navigateToRoomReservation = useNavigate() 
+    console.log(cart)
     async function handleConfirm() {
         const order = {
             items: cart  ,
@@ -41,27 +42,23 @@ function CartView() {
             <>
                 <ul key={room.id} className="cartViewOrganization" >
                     <li><img src={room.room.img} alt="" /></li>
-                    <li>
-                    {room.room.title}
-                    </li>
-                    <li>Personas : {room.count} </li>
-                    <li>Cantidad de días:
-                    {room.numberOfDays}
-                    </li>
-                    <li>Precio : $ {""} {countTotalPrice(room.room.numberOfDays)}M Cop / Mes</li>
+                    <ul className="cartViewDescription">
+                        <li><h2 style={{color:"orange"}}>{room.room.title}</h2>
+                        </li>
+                        <li>Numero de Personas : {room.count} </li>
+                        <li>Cantidad de días: {room.numberOfDays} </li>
+                        <li><h3>Total : $ {""} {room.numberOfDays*room.room.price} Cop / Nigth</h3></li>
+                    </ul>
                 
                 </ul>
-                
+                <Flex>
+                <Button onClick={()=> removeItem(room.id)}>Eliminar Habitacion</Button>
+                <Button onClick={clearCart}>Vaciar carrito</Button>
+                <Button onClick={handleConfirm}>Crear orden</Button>
+                </Flex>
             </>
 )
     }
-    <Flex>
-    <Button onClick={()=>removeItem(room.id)}>Eliminar Habitacion</Button>
-    <Button onClick={clearCart}>Vaciar carrito</Button>
-    <Button onClick={handleConfirm}>Crear orden</Button>
-    <Button onClick={countTotalPrice}>calcular Precio</Button>
-    </Flex>
     </div>)
     }
 export default CartView
-

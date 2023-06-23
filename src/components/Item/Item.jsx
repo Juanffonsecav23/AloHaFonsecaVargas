@@ -8,7 +8,7 @@ function CardDescription({ price, category}) {
   
   return (
     <div className="item-card_detail">
-      <h5 className="item-card_price-tag">$ {price} M COP /mes</h5>
+      <h5 className="item-card_price-tag">$ {price}  COP / Noche</h5>
       <small>{category}</small>
     </div>
   );

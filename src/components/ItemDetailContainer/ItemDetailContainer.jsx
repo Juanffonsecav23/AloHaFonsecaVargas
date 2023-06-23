@@ -11,6 +11,7 @@ import Carrousel from "../Carrousel/Carrousel";
 import Swal from "sweetalert2"
 import Flex from "../Flex/Flex";
 import { differenceInDays, parseISO } from "date-fns";
+import { Alert } from "bootstrap";
 
 function ItemDetailContainer() {
   const [errors , setErrors] = useState(null)
@@ -47,7 +48,6 @@ function ItemDetailContainer() {
     return (setNumerOfDays)
   }
 
-
   function onAddToCart(countDays) {
     const newItem = {
       room, numberOfDays
@@ -78,7 +78,7 @@ return (
 
 if (room) {
   return (
-    <div className="card-detail_main">
+    <div className="cardDetail">
       <div className="card-detail_img">
         <Carrousel>
         <img src={room.img} alt={room.title} />
@@ -88,8 +88,7 @@ if (room) {
         </Carrousel>
       </div>
       <div className="card-detail_detail">
-        <h1>{room.title}</h1>
-        <h2 className="priceTag">$ {room.price} Cop / Noche</h2>
+        <h1 className="ItemDetailTitle">{room.title}</h1>
         
         <p className="description">{room.description}</p>
         <Flex>
@@ -100,13 +99,17 @@ if (room) {
         <span><input type="date" className="InputCalendario" onChange={handleDateChangeIn} value={selectedDateIn}></input></span>
         <span><input type="date" className="InputCalendario" onChange={handleDateChangeOut} value={selectedDateOut}></input></span>
         </Flex>
-        <button onClick={countDays}>calcular</button>
-        <p> dias : {numberOfDays}</p>
+        <Flex>
+        {/* <button  style={{backgroundColor:"lightsalmon"}}onClick={countDays}>Calcular numero de Noches</button>
+        <h4 style={{backgroundColor:"lightsalmon" , color:"white" , width: "200px"}}> Noches : {numberOfDays}</h4> */}
+        </Flex>
+        {/* {numberOfDays != 0 ? ( <p>Noches : {countDays}</p>): ( <p>Noooooooo</p> )} */}
+        <h3 style={{marginTop: "20px"}}>$ {room.price} Cop / Noche</h3>
         {countInCart === 0 ? (
-            <ItemCount onAddToCart={onAddToCart} stock={room.capacidad} />
+          <ItemCount onAddToCart={onAddToCart} stock={room.capacidad} />
           ) : (
             <Link to="/cart" style={{color:"orange"}}>Ir a las reservas</Link> 
-          )}
+            )}
         {/* <ItemCount stock={room.capacidad} /> */}
       </div>
     </div>

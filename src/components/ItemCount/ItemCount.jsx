@@ -16,7 +16,7 @@ function ItemCount(props) {
 
   return (
     <div className="itemcount_container">
-      <small>Seleccione la cantidad de personas</small>
+      <small>Numero de personas</small>
       <div className="itemcount_control">
         <Flex>
           <Button  className="btnA" onClick={handleSubstract}>
@@ -30,7 +30,7 @@ function ItemCount(props) {
       </div>
 
       <div className="itemcount_btns">
-        <Button onClick={() => {props.onAddToCart(count);}} className="btnA">Reservar</Button>
+        <Button onClick={() => {props.onAddToCart(count)}} className="btnA">Reservar</Button>
       </div>
     </div>
   );
