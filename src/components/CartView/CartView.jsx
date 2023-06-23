@@ -48,7 +48,7 @@ function CartView() {
                     <li>Cantidad de días:
                     {room.numberOfDays}
                     </li>
-                    <li>Precio : $ {""} {countTotalPrice(room.numberOfDays)}M Cop / Mes</li>
+                    <li>Precio : $ {""} {countTotalPrice(room.room.numberOfDays)}M Cop / Mes</li>
                 
                 </ul>
                 
@@ -64,3 +64,4 @@ function CartView() {
     </div>)
     }
 export default CartView
+
