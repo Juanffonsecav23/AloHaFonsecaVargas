@@ -3,7 +3,7 @@ import { useContext, useEffect, useState } from "react";
 import "./ItemDetail.css";
 import ItemCount from "../ItemCount/ItemCount";
 
-import { Link, useParams } from "react-router-dom";
+import { Link, useParams, Navigate } from "react-router-dom";
 import Loader from "../Loader/Loader";
 import { cartContext } from "../../context/cartContext";
 import { getRoomData } from "../../services/Firebase";
@@ -28,7 +28,7 @@ function ItemDetailContainer() {
       iconColor: "orange",
       focusConfirm: true,
       confirmButtonText:
-        '<a href="/cart">Ir a la reserva</a> ',
+        '<Navigate to="/cart">Ir a la reserva</Navigate> ',
       confirmButtonColor:"orange"
     })
 
@@ -48,7 +48,10 @@ function ItemDetailContainer() {
 
 
   function onAddToCart(count) {
-    addItem(room , count);
+    const newItem = {
+      room, numberOfDays
+    }
+    addItem(newItem , count);
     setCountInCart(count);
     showAlert();
   }
@@ -85,7 +88,7 @@ if (room) {
       </div>
       <div className="card-detail_detail">
         <h1>{room.title}</h1>
-        <h2 className="priceTag">$ {room.price}M Cop / Mes</h2>
+        <h2 className="priceTag">$ {room.price} Cop / Noche</h2>
         
         <p className="description">{room.description}</p>
         <Flex>
@@ -96,8 +99,6 @@ if (room) {
         <span><input type="date" className="InputCalendario" onChange={handleDateChangeIn} value={selectedDateIn}></input></span>
         <span><input type="date" className="InputCalendario" onChange={handleDateChangeOut} value={selectedDateOut}></input></span>
         </Flex>
-        <button onClick={countDays}>calcular</button>
-        <p>Numero de dias: {numberOfDays}</p>
         {countInCart === 0 ? (
             <ItemCount onAddToCart={onAddToCart} stock={room.capacidad} />
           ) : (

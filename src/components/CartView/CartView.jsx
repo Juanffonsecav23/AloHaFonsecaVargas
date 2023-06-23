@@ -40,12 +40,15 @@ function CartView() {
         cart.map (room =>
             <>
                 <ul key={room.id} className="cartViewOrganization" >
-                    <li><img src={room.img} alt="" /></li>
+                    <li><img src={room.room.img} alt="" /></li>
                     <li>
-                    {room.title}
+                    {room.room.title}
                     </li>
                     <li>Personas : {room.count} </li>
-                    <li>Precio : $ {""} {countTotalPrice}M Cop / Mes</li>
+                    <li>Cantidad de días:
+                    {room.numberOfDays}
+                    </li>
+                    <li>Precio : $ {""} {countTotalPrice(room.numberOfDays)}M Cop / Mes</li>
                 
                 </ul>
                 

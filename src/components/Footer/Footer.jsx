@@ -6,7 +6,7 @@ function Footer() {
     <div>
       <footer className="footer">
       <ul className="social-icon">
-        <li className="social-icon__item"><a className="social-icon__link" href="#">
+        <li className="social-icon__item"><a className="social-icon__link" href="https://www.facebook.com/profile.php?id=100087745636618">
             <img style={{color:'white'}} src="/src/assets/iconos/facebook.svg" alt="" />
           </a></li>
         <li className="social-icon__item"><a className="social-icon__link" href="#">

@@ -46,17 +46,14 @@ export function CartContextProvider ({children}){
     function countTotalPrice(countDays){
         let totalPrice = 0;
         cart.forEach((room)=> {
-            totalPrice = (room.price * countDays).toFixed(3);
+            totalPrice = totalPrice + (room.room.price * countDays);
+
         });
-        console.log(countDays);
-        console.log(parseInt(totalPrice)); 
+        return totalPrice
+
         
-    }/* funcion para totalizar el precio de los productos agragados */
-    /* function totalPriceNigth(countDays) {
-        let
-        const pricePerNigth = countDays* room.price;
-        console.log(pricePerNigth);
-    } */
+    }
+
     function clearCart(emptyCart) {
         setCart(cart.filter(cart => cart.value !== emptyCart))
     }/* funcion para limpiar todos los productos del carrito */
