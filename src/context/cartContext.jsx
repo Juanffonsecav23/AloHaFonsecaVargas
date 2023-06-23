@@ -43,12 +43,11 @@ export function CartContextProvider ({children}){
         return total
     }/* funcion para la suma total de productos del carrito */
 
-    function countTotalPrice(numberOfDays){
+    function countTotalPrice(countDays){
         let totalPrice = 0;
         cart.forEach((room)=> {
-            totalPrice = (room.price * parseInt(numberOfDays));
+            totalPrice = (room.price * parseInt(countDays)).toFixed(3);
         });
-        console.log(totalPrice);
         return totalPrice
     }
 

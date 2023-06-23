@@ -44,15 +44,16 @@ function ItemDetailContainer() {
   };
   function countDays() {
     setNumerOfDays(differenceInDays(parseISO(selectedDateOut) , parseISO(selectedDateIn)));
+    return (setNumerOfDays)
   }
 
 
-  function onAddToCart(count) {
+  function onAddToCart(countDays) {
     const newItem = {
       room, numberOfDays
     }
-    addItem(newItem , count);
-    setCountInCart(count);
+    addItem(newItem , countDays);
+    setCountInCart(countDays);
     showAlert();
   }
 
@@ -99,6 +100,8 @@ if (room) {
         <span><input type="date" className="InputCalendario" onChange={handleDateChangeIn} value={selectedDateIn}></input></span>
         <span><input type="date" className="InputCalendario" onChange={handleDateChangeOut} value={selectedDateOut}></input></span>
         </Flex>
+        <button onClick={countDays}>calcular</button>
+        <p> dias : {numberOfDays}</p>
         {countInCart === 0 ? (
             <ItemCount onAddToCart={onAddToCart} stock={room.capacidad} />
           ) : (
