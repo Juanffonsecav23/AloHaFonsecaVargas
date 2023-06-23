@@ -42,14 +42,11 @@ export function CartContextProvider ({children}){
         return total
     }/* funcion para la suma total de productos del carrito */
 
-    function countTotalPrice(){
-        let totalPrice = 0;
-        cart.forEach((room)=> {
-            totalPrice = (room.price * room.count).toFixed(3);
-        });
-        console.log(totalPrice); 
-        
-    }/* funcion para totalizar el precio de los productos agragados */
+    const countTotalPrice = () => {
+        let total = 0
+        cart.forEach((e) => total += (e.count*e.price))
+        return total        
+    };/* funcion para totalizar el precio de los productos agragados */
 
     function clearCart(emptyCart) {
         setCart(cart.filter(cart => cart.value !== emptyCart))
