@@ -3,7 +3,7 @@ import { useContext, useEffect, useState } from "react";
 import "./ItemDetail.css";
 import ItemCount from "../ItemCount/ItemCount";
 
-import { Link, useParams, Navigate } from "react-router-dom";
+import { Link, useParams, useNavigate } from "react-router-dom";
 import Loader from "../Loader/Loader";
 import { cartContext } from "../../context/cartContext";
 import { getRoomData } from "../../services/Firebase";
@@ -11,7 +11,7 @@ import Carrousel from "../Carrousel/Carrousel";
 import Swal from "sweetalert2"
 import Flex from "../Flex/Flex";
 import { differenceInDays, parseISO } from "date-fns";
-import { Alert } from "bootstrap";
+
 
 function ItemDetailContainer() {
   const [errors , setErrors] = useState(null)
@@ -21,32 +21,35 @@ function ItemDetailContainer() {
   const [numberOfDays , setNumerOfDays] = useState(0)
   const [countInCart, setCountInCart] = useState(0);
   const {cart , addItem , removeItem , countTotalPrice , clearCart} = useContext(cartContext);
-  
-  const showAlert =()=>{
+  const navigate = useNavigate();
+
+  const showAlert = () => {
     Swal.fire({
       title: 'Reserva realizada con exito',
       icon: 'success',
       iconColor: "orange",
       focusConfirm: true,
-      confirmButtonText:
-        '<Navigate to="/cart">Ir a la reserva</Navigate> ',
-      confirmButtonColor:"orange"
+      confirmButtonText: 'Ir a la reserva',
+      confirmButtonColor: "orange"
+    }).then((result) => {
+      /* verificamos que el resultado sea de confirmación, si el usuario presiona el botón, entonces será true */
+      if (result.isConfirmed) {
+        /* Si es true, entonces ejecutamos el navigate, indicando la ruta */
+        navigate("/cart");
+      }
     })
-
   }
   
   const handleDateChangeIn = (event) => {
     const dateIn = event.target.value;
     setSelectedDateIn(dateIn);
+    setNumerOfDays(differenceInDays(parseISO(selectedDateOut) , parseISO(dateIn)));
   };
   const handleDateChangeOut = (event) => {
     const dateOut = event.target.value;
     setSelectedDateOut(dateOut);
+    setNumerOfDays(differenceInDays(parseISO(dateOut) , parseISO(selectedDateIn)));
   };
-  function countDays() {
-    setNumerOfDays(differenceInDays(parseISO(selectedDateOut) , parseISO(selectedDateIn)));
-    return (setNumerOfDays)
-  }
 
   function onAddToCart(countDays) {
     const newItem = {
@@ -100,17 +103,13 @@ if (room) {
         <span><input type="date" className="InputCalendario" onChange={handleDateChangeOut} value={selectedDateOut}></input></span>
         </Flex>
         <Flex>
-        {/* <button  style={{backgroundColor:"lightsalmon"}}onClick={countDays}>Calcular numero de Noches</button>
-        <h4 style={{backgroundColor:"lightsalmon" , color:"white" , width: "200px"}}> Noches : {numberOfDays}</h4> */}
         </Flex>
-        {/* {numberOfDays != 0 ? ( <p>Noches : {countDays}</p>): ( <p>Noooooooo</p> )} */}
-        <h3 style={{marginTop: "20px"}}>$ {room.price} Cop / Noche</h3>
+        <h3 style={{marginTop: "20px"}}>$ {(room.price).toFixed(3)} Cop / Noche</h3>
         {countInCart === 0 ? (
           <ItemCount onAddToCart={onAddToCart} stock={room.capacidad} />
           ) : (
             <Link to="/cart" style={{color:"orange"}}>Ir a las reservas</Link> 
-            )}
-        {/* <ItemCount stock={room.capacidad} /> */}
+        )}
       </div>
     </div>
   );

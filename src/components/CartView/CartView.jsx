@@ -46,8 +46,8 @@ function CartView() {
                         <li><h2 style={{color:"orange"}}>{room.room.title}</h2>
                         </li>
                         <li>Numero de Personas : {room.count} </li>
-                        <li>Cantidad de días: {room.numberOfDays} </li>
-                        <li><h3>Total : $ {""} {room.numberOfDays*room.room.price} Cop / Nigth</h3></li>
+                        <li>Numero de Noches: {room.numberOfDays} </li>
+                        <li><h3>Total : $ {""} {(room.numberOfDays*room.room.price).toFixed(3)} Cop / Nigth</h3></li>
                     </ul>
                 
                 </ul>

@@ -17,7 +17,7 @@ function App() {
     <CartContextProvider>
       <BrowserRouter>
         <Navbar/>
-        <button onClick={exportData}>Exportar Data</button>
+        {/* <button onClick={exportData}>Exportar Data</button> */}
         <Routes>
           <Route path="/" element={<Homepage/>} />
           <Route path="/room/:id" element={<ItemDetailContainer/>}/>

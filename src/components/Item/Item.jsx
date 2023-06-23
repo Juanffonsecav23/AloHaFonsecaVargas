@@ -45,7 +45,7 @@ function Item({ title, img, price, category, description, id, capacidad }) {
         <h5>{title}</h5> 
         <small>{category}</small>
         {/* <small><p>{description}</p></small> */}
-        <CardDescription price={price}   />
+        <CardDescription price={(price).toFixed(3)}   />
         <Button className="btn-ver-detalles" style={stylesButton}>Ver detalles</Button> 
       </div>
 

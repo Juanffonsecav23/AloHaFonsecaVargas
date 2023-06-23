@@ -45,7 +45,7 @@ export function CartContextProvider ({children}){
 
     const countTotalPrice = () => {
         let total = 0
-        cart.forEach((e) => total += (e.room.price*e.numberOfDays).toFixed(3))
+        cart.forEach((e) => total += (e.room.price*e.numberOfDays).toFixed(6))
         return total        
       };
 
