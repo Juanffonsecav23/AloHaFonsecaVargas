@@ -1,29 +1,23 @@
 import { useContext } from "react";
 import { Link } from "react-router-dom";
 import { cartContext } from "../../context/cartContext";
-import Button from "../Button/Button";
 import { createOrder } from "../../services/Firebase";
 import { useNavigate } from "react-router-dom";
 import "./CartView.css";
 import Flex from "../Flex/Flex";
+import CheckOutForm from "../CheckOutForm/CheckOutForm";
 
 function CartView() {
     const {cart , removeItem , clearCart , countTotalPrice } = useContext(cartContext)
     const navigateToRoomReservation = useNavigate() 
-    console.log(cart)
-    async function handleConfirm() {
+    async function handleConfirm(userData) {
         const order = {
             items: cart  ,
-            buyer: {
-                name: "Santiago",
-                phone: 123123,
-                email: "santigao@mail.com"
-            },
+            buyer:userData ,
             date: new Date(),
             price: countTotalPrice()
         }
         const id =  await createOrder(order)
-        console.log("respuesta" , id);
         clearCart();
         navigateToRoomReservation(`/order-confirmation/${id}`)
     }
@@ -36,25 +30,25 @@ function CartView() {
     }
         return (
     <div>
-    <h1 className="cartViewTitle">Reservas</h1>
+    <h1 className="cartView-Title">Reservas</h1>
     {
         cart.map (room =>
             <>
-                <ul key={room.id} className="cartViewOrganization" >
+                <ul key={room.id} className="cartView-Organization" >
                     <li><img src={room.room.img} alt="" /></li>
-                    <ul className="cartViewDescription">
+                    <ul className="cartView-Description">
                         <li><h2 style={{color:"orange"}}>{room.room.title}</h2>
                         </li>
                         <li>Numero de Personas : {room.count} </li>
                         <li>Numero de Noches: {room.numberOfDays} </li>
                         <li><h3>Total : $ {""} {(room.numberOfDays*room.room.price).toFixed(3)} Cop / Nigth</h3></li>
+                        <li><button  style={{backgroundColor:"red"}} onClick={()=> removeItem(room.id)}>Eliminar Habitacion</button></li>
                     </ul>
                 
                 </ul>
+                <CheckOutForm onHandleConfrim={handleConfirm} />
                 <Flex>
-                <Button onClick={()=> removeItem(room.id)}>Eliminar Habitacion</Button>
-                <Button onClick={clearCart}>Vaciar carrito</Button>
-                <Button onClick={handleConfirm}>Crear orden</Button>
+                <button onClick={clearCart} style={{backgroundColor:"red"}} >Vaciar carrito</button>
                 </Flex>
             </>
 )

@@ -30,7 +30,7 @@ function ItemCount(props) {
       </div>
 
       <div className="itemcount_btns">
-        <Button onClick={() => {props.onAddToCart(count)}} className="btnA">Reservar</Button>
+        <Button onClick={() => {props.onAddToCart(count)}} className="btnA btnReservar">Agregar Reserva</Button>
       </div>
     </div>
   );

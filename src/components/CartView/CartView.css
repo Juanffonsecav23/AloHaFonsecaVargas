@@ -1,8 +1,8 @@
-.cartViewTitle{
+.cartView-Title{
     color: orange;
     margin: 20px 0 5px 20px;
 }
-.cartViewOrganization{
+.cartView-Organization{
     display: flex;
     flex-flow: row nowrap;
     list-style: none;
@@ -12,7 +12,7 @@
     width: 90%;
     margin: 2% 0 2% 5%;
 }
-.cartViewDescription{
+.cartView-Description{
     display: flex;
     flex-flow: column nowrap;
     list-style: none;

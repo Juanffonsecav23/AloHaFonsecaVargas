@@ -25,7 +25,7 @@ function ItemDetailContainer() {
 
   const showAlert = () => {
     Swal.fire({
-      title: 'Reserva realizada con exito',
+      title: 'Reserva agregada con exito',
       icon: 'success',
       iconColor: "orange",
       focusConfirm: true,
