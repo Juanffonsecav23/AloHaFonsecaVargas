@@ -1,5 +1,5 @@
-import './Navbar.css';
-import CarWidget from '../CarWidget/CarWidget';
+import './navbar.css';
+import CarWidget from '../carWidget/CarWidget';
 import { NavLink } from 'react-router-dom';
 
 export default function Navbar () {

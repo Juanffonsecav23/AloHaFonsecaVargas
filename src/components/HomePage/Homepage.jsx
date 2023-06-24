@@ -1,6 +1,6 @@
 import Carrousel from "../Carrousel/Carrousel"
 import QuienesSomos from "../QuienesSomos/QuienesSomos"
-import ItemListContainer from "../ItemListContainer/ItemListContainer"
+import ItemListContainer from "../itemListContainer/itemListContainer"
 
 function Homepage() {
   return (
