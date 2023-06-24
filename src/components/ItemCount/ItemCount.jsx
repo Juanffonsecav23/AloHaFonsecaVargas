@@ -1,7 +1,7 @@
 /* eslint-disable react/prop-types */
 import Flex from "../Flex/Flex";
 import { useState } from "react";
-import "./itemcount.css";
+import "./Itemcount.css";
 import Button from "../Button/Button";
 
 function ItemCount(props) {
