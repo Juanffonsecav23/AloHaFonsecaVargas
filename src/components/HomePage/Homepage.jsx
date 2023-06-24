@@ -1,5 +1,5 @@
 import Carrousel from "../Carrousel/Carrousel"
-import QuienesSomos from "../Quienes somos/QuienesSomos"
+import QuienesSomos from "../QuienesSomos/QuienesSomos"
 import ItemListContainer from "../ItemListContainer/ItemListContainer"
 
 function Homepage() {

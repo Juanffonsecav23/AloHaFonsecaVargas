@@ -1,3 +1,4 @@
+/* eslint-disable react/prop-types */
 function Carrousel({ children }) {
   return (
     <div id="carouselExample" className="carousel slide">

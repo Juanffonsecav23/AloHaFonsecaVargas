@@ -1,3 +1,4 @@
+/* eslint-disable react/prop-types */
 import { useState } from "react";
 import "./item.css";
 import { Link } from "react-router-dom";
@@ -14,7 +15,7 @@ function CardDescription({ price, category}) {
   );
 }
 
-function Item({ title, img, price, category, description, id, capacidad }) {
+function Item({ title, img, price, category, id, capacidad }) {
   const [isFavorite, setIsFavorite] = useState(false);
   let classNameFavorite;
 

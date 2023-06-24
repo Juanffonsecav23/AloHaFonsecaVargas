@@ -20,7 +20,7 @@ function ItemDetailContainer() {
   const [selectedDateOut, setSelectedDateOut] = useState('');
   const [numberOfDays , setNumerOfDays] = useState(0)
   const [countInCart, setCountInCart] = useState(0);
-  const {cart , addItem , removeItem , countTotalPrice , clearCart} = useContext(cartContext);
+  const { addItem} = useContext(cartContext);
   const navigate = useNavigate();
 
   const showAlert = () => {

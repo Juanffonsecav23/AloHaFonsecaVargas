@@ -1,3 +1,4 @@
+/* eslint-disable react/prop-types */
 import Item from "../Item/Item";
 import Flex from "../Flex/Flex";
 import Loader from "../Loader/Loader";
