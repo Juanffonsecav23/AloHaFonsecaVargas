@@ -45,15 +45,9 @@ export function CartContextProvider ({children}){
 
     const countTotalPrice = () => {
         let total = 0
-<<<<<<< HEAD
-        cart.forEach((e) => total += (e.count*e.price))
-        return total        
-    };/* funcion para totalizar el precio de los productos agragados */
-=======
         cart.forEach((e) => total += (e.room.price*e.numberOfDays).toFixed(6))
         return total        
       };
->>>>>>> calendario
 
     function clearCart(emptyCart) {
         setCart(cart.filter(cart => cart.value !== emptyCart))
