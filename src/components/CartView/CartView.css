@@ -1,0 +1,21 @@
+.cartView-Title{
+    color: orange;
+    margin: 20px 0 5px 20px;
+}
+.cartView-Organization{
+    display: flex;
+    flex-flow: row nowrap;
+    list-style: none;
+    justify-content: space-evenly;
+    align-items: center;
+    box-shadow: 0px 0px 5px rgba(0,0,0,0.22);
+    width: 90%;
+    margin: 2% 0 2% 5%;
+}
+.cartView-Description{
+    display: flex;
+    flex-flow: column nowrap;
+    list-style: none;
+    justify-content: space-evenly;
+    height: 300px;
+}

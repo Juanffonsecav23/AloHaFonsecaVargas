@@ -3,22 +3,61 @@ import { useContext, useEffect, useState } from "react";
 import "./ItemDetail.css";
 import ItemCount from "../ItemCount/ItemCount";
 
-import { Link, useParams } from "react-router-dom";
+import { Link, useParams, useNavigate } from "react-router-dom";
 import Loader from "../Loader/Loader";
 import { cartContext } from "../../context/cartContext";
 import { getRoomData } from "../../services/Firebase";
 import Carrousel from "../Carrousel/Carrousel";
+import Swal from "sweetalert2"
+import Flex from "../Flex/Flex";
+import { differenceInDays, parseISO } from "date-fns";
+
 
 function ItemDetailContainer() {
   const [errors , setErrors] = useState(null)
   const [room, setRoom] = useState(null);
+  const [selectedDateIn, setSelectedDateIn] = useState('');
+  const [selectedDateOut, setSelectedDateOut] = useState('');
+  const [numberOfDays , setNumerOfDays] = useState(0)
   const [countInCart, setCountInCart] = useState(0);
   const {cart , addItem , removeItem , countTotalPrice , clearCart} = useContext(cartContext);
+  const navigate = useNavigate();
 
-  function onAddToCart(count) {
-    addItem(room , count);
-    setCountInCart(count);
-    alert(`Agregaste ${count} - ${room.title} al carrito`);
+  const showAlert = () => {
+    Swal.fire({
+      title: 'Reserva agregada con exito',
+      icon: 'success',
+      iconColor: "orange",
+      focusConfirm: true,
+      confirmButtonText: 'Ir a la reserva',
+      confirmButtonColor: "orange"
+    }).then((result) => {
+      /* verificamos que el resultado sea de confirmación, si el usuario presiona el botón, entonces será true */
+      if (result.isConfirmed) {
+        /* Si es true, entonces ejecutamos el navigate, indicando la ruta */
+        navigate("/cart");
+      }
+    })
+  }
+  
+  const handleDateChangeIn = (event) => {
+    const dateIn = event.target.value;
+    setSelectedDateIn(dateIn);
+    setNumerOfDays(differenceInDays(parseISO(selectedDateOut) , parseISO(dateIn)));
+  };
+  const handleDateChangeOut = (event) => {
+    const dateOut = event.target.value;
+    setSelectedDateOut(dateOut);
+    setNumerOfDays(differenceInDays(parseISO(dateOut) , parseISO(selectedDateIn)));
+  };
+
+  function onAddToCart(countDays) {
+    const newItem = {
+      room, numberOfDays
+    }
+    addItem(newItem , countDays);
+    setCountInCart(countDays);
+    showAlert();
   }
 
   const id = useParams().id;
@@ -42,27 +81,35 @@ return (
 
 if (room) {
   return (
-    <div className="card-detail_main">
+    <div className="cardDetail">
       <div className="card-detail_img">
         <Carrousel>
         <img src={room.img} alt={room.title} />
-        <img src={room.img1} alt={room.title} />
-        <img src={room.img2} alt={room.title} />
+        <img src={room.img1} alt={room.title}/>
+        <img src={room.img2} alt={room.title}/>
         <img src={room.img3} alt={room.title} />
         </Carrousel>
       </div>
       <div className="card-detail_detail">
-        <h1>{room.title}</h1>
-        <h2 className="priceTag">$ {room.price} Cop / Mes</h2>
-        <small>{room.category}</small>
-        <small>{room.description}</small>
-
+        <h1 className="ItemDetailTitle">{room.title}</h1>
+        
+        <p className="description">{room.description}</p>
+        <Flex>
+        <label>Check In</label>
+        <label>Check Out</label>
+        </Flex>
+        <Flex>
+        <span><input type="date" className="InputCalendario" onChange={handleDateChangeIn} value={selectedDateIn}></input></span>
+        <span><input type="date" className="InputCalendario" onChange={handleDateChangeOut} value={selectedDateOut}></input></span>
+        </Flex>
+        <Flex>
+        </Flex>
+        <h3 style={{marginTop: "20px"}}>$ {(room.price).toFixed(3)} Cop / Noche</h3>
         {countInCart === 0 ? (
-            <ItemCount onAddToCart={onAddToCart} stock={room.capacidad} />
+          <ItemCount onAddToCart={onAddToCart} stock={room.capacidad} />
           ) : (
-            <Link to="/cart" style={{color:"orange"}}>Ir al carrito</Link> 
-          )}
-        {/* <ItemCount stock={room.capacidad} /> */}
+            <Link to="/cart" style={{color:"orange"}}>Ir a las reservas</Link> 
+        )}
       </div>
     </div>
   );

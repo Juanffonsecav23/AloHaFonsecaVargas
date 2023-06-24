@@ -19,7 +19,7 @@ const db = getFirestore(FirebaseApp)
 
  export async function getData() {
   const roomsCollectionRef = collection(db , "Rooms")
-  const q = query(roomsCollectionRef, orderBy("index"));
+  const q = query(roomsCollectionRef, orderBy("index"));//orden de la aparicion de las habitaciones
   const roomsSnapshot = await getDocs(q);
   const arrayDocs = roomsSnapshot.docs;
   const dataDocs = arrayDocs.map(doc => {
@@ -47,7 +47,6 @@ export async function getCategoryData(categoryId) {
 
 export async function createOrder(data) {
   const ordersCollectionRef = collection(db, "orders");
-
   const response = await addDoc(ordersCollectionRef, data);
   return response.id;
 }
@@ -55,7 +54,7 @@ export async function createOrder(data) {
 export async function exportData (){
   const roomsCollectionRef = collection(db, "Rooms");
   for (const room of rooms ) {
-/*     room.index = room.id */
+    room.index = room.id
     const respuesta = await addDoc(roomsCollectionRef , room);
     console.log("cuartos" , respuesta);
   }
@@ -67,6 +66,7 @@ export async function exportDataWithBatch(){
 
   for (const room of rooms ) { 
     room.index = room.id
+    delete room.id
     const docRef = doc(roomsCollectionRef )
     batch.set(docRef , room);
   }
