@@ -34,6 +34,11 @@ export async function getRoomData(idURL) {
   return {id: docSnap.id , ...docSnap.data()}
 }
 
+/* export async function getSpaciesData(){
+  const docRef = doc(db, "espacios");
+  const docSnap = await getDoc(docRef);
+  return{...docSnap.data()}
+} */
 export async function getCategoryData(categoryId) {
   const roomsCollectionRef = collection(db, "Rooms");
   const q = query(roomsCollectionRef, where("category" , "==" , categoryId));
