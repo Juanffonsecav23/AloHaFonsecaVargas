@@ -1,5 +1,4 @@
 import './navbar.css';
-import CarWidget from '../carWidget/CarWidget';
 import { NavLink } from 'react-router-dom';
 
 export default function Navbar () {
@@ -22,15 +21,14 @@ export default function Navbar () {
                         </ul>
                     </div>
                     <li>
-                        <NavLink to="/">Espacios</NavLink>
+                        <NavLink to="/Espacios">Espacios</NavLink>
                     </li>
                     <li>
-                        <NavLink to="/">Reglas/Recomendaciones</NavLink>
+                        <NavLink to="/ReglasyRecomendaciones">Reglas/Recomendaciones</NavLink>
                     </li>
                     <li>
-                        <NavLink to="/">Contacto</NavLink>
+                        <NavLink to="/Contacto">Contacto</NavLink>
                     </li>
-                    <CarWidget/>
                 </ul>
             </nav>
         </div>

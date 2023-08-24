@@ -40,7 +40,7 @@ function ItemDetailContainer() {
     })
   }
   
-  const handleDateChangeIn = (event) => {
+/*   const handleDateChangeIn = (event) => {
     const dateIn = event.target.value;
     setSelectedDateIn(dateIn);
     setNumerOfDays(differenceInDays(parseISO(selectedDateOut) , parseISO(dateIn)));
@@ -58,7 +58,7 @@ function ItemDetailContainer() {
     addItem(newItem , countDays);
     setCountInCart(countDays);
     showAlert();
-  }
+  } */
 
   const id = useParams().id;
 
@@ -94,22 +94,21 @@ if (room) {
         <h1 className="ItemDetailTitle">{room.title}</h1>
         
         <p className="description">{room.description}</p>
-        <Flex>
+      {/*  <Flex>
         <label>Check In</label>
         <label>Check Out</label>
         </Flex>
         <Flex>
         <span><input type="date" className="InputCalendario" onChange={handleDateChangeIn} value={selectedDateIn}></input></span>
         <span><input type="date" className="InputCalendario" onChange={handleDateChangeOut} value={selectedDateOut}></input></span>
-        </Flex>
-        <Flex>
-        </Flex>
+        </Flex> */}
         <h3 style={{marginTop: "20px"}}>$ {(room.price).toFixed(3)} Cop / Noche</h3>
-        {countInCart === 0 ? (
+      {/* {countInCart === 0 ? (
           <ItemCount onAddToCart={onAddToCart} stock={room.capacidad} />
           ) : (
             <Link to="/cart" style={{color:"orange"}}>Ir a las reservas</Link> 
-        )}
+            )} */}
+            <Link to="/cart" style={{color:"orange"}}>Ir a las reservas</Link> 
       </div>
     </div>
   );

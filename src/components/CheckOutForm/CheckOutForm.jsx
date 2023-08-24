@@ -25,7 +25,7 @@ function CheckOutForm({onHandleConfrim}) {
 
   return (
     <div className="checkoutform-Container">
-        <h3>Completa tu compra con tus datos personales</h3>
+        <h3>Deja tus datos y nosotros te contactamos</h3>
         <div>
             <label >Nombre:</label>
             <input className="input-Form" value={userData.nombre} name="nombre" type="text" onChange={onInputChange} />
@@ -35,14 +35,18 @@ function CheckOutForm({onHandleConfrim}) {
             <input className="input-Form" value={userData.apellido} name="apellido" type="text" onChange={onInputChange} />
         </div>
         <div>
-            <label>Email: </label>
+            <label style={{marginRight:"15px"}}>Email:</label>
             <input className="input-Form" value={userData.email} name="email" type="text"  onChange={onInputChange}/>
         </div>
         <div>
             <label>Telefono: </label>
             <input className="input-Form" value={userData.phone} name="phone" type="text" onChange={onInputChange} />
         </div>
-        <button style={{backgroundColor:"orange" , width:"100%"}} onClick={onSubmit}>Reservar</button>
+        <div>
+            <p style={{marginTop:"10px" , marginBottom:"0"}}>Comentario:</p>
+            <textarea cols={30} rows={10} className="input-Form" style={{marginBottom:"10px"}} ></textarea>
+        </div>
+        <button style={{backgroundColor:"orange" , width:"100%"}} onClick={onSubmit}>Enviar</button>
     </div> )
 
   }

@@ -1,16 +1,10 @@
-import Carrousel from "../Carrousel/Carrousel"
 import QuienesSomos from "../QuienesSomos/QuienesSomos"
-import ItemListContainer from "../itemListContainer/itemListContainer"
+import ItemListContainer from "../ItemListContainer/itemListContainer"
 
 function Homepage() {
   return (
       <div className='Body'>
-        <Carrousel>  
         <img src='/imgRooms/casablancadenoceh.jpeg'/>
-        <img src='/promociones/2.jpg'/>
-        <img src='/imgRooms/casablancadenoceh.jpeg'/>
-        <img src='/promociones/4.jpg'/>
-        </Carrousel>
         <QuienesSomos/>
         <ItemListContainer/>
       </div>

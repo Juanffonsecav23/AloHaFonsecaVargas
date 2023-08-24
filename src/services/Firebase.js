@@ -17,7 +17,7 @@ const FirebaseApp = initializeApp(firebaseConfig);
 /* const analytics = getAnalytics(FirebaseApp);*/
 const db = getFirestore(FirebaseApp)
 
- export async function getData() {
+export async function getData() {
   const roomsCollectionRef = collection(db , "Rooms")
   const q = query(roomsCollectionRef, orderBy("index"));//orden de la aparicion de las habitaciones
   const roomsSnapshot = await getDocs(q);
