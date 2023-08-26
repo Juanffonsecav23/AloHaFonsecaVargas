@@ -1,27 +1,27 @@
 /* AsyncMock - servicioMock / backend/nube/api */
 import { useContext, useEffect, useState } from "react";
 import "./ItemDetail.css";
-import ItemCount from "../ItemCount/ItemCount";
+/* import ItemCount from "../ItemCount/ItemCount"; */
 
 import { Link, useParams, useNavigate } from "react-router-dom";
 import Loader from "../Loader/Loader";
-import { cartContext } from "../../context/cartContext";
+/* import { cartContext } from "../../context/cartContext";*/
 import { getRoomData } from "../../services/Firebase";
 import Carrousel from "../Carrousel/Carrousel";
 import Swal from "sweetalert2"
-import Flex from "../Flex/Flex";
-import { differenceInDays, parseISO } from "date-fns";
+/* import Flex from "../Flex/Flex"; */
+/* import { differenceInDays, parseISO } from "date-fns"; */
 
 
 function ItemDetailContainer() {
   const [errors , setErrors] = useState(null)
   const [room, setRoom] = useState(null);
-  const [selectedDateIn, setSelectedDateIn] = useState('');
+/*   const [selectedDateIn, setSelectedDateIn] = useState('');
   const [selectedDateOut, setSelectedDateOut] = useState('');
   const [numberOfDays , setNumerOfDays] = useState(0)
   const [countInCart, setCountInCart] = useState(0);
   const { addItem} = useContext(cartContext);
-  const navigate = useNavigate();
+ */  const navigate = useNavigate();
 
   const showAlert = () => {
     Swal.fire({
