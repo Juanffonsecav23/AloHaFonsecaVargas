@@ -5,7 +5,6 @@ import ItemDetailContainer from "./components/ItemDetailContainer/ItemDetailCont
 import ItemListContainer from "./components/ItemListContainer/itemListContainer"
 import Footer from "./components/Footer/Footer"
 import { CartContextProvider } from "./context/cartContext"
-import CartView from "./components/CartView/CartView";
 import OrderVerify from "./components/OrderVerify/OrderVerify"
 import WhatsappButton from "./components/WhatsappButton/WhatsappButton"
 import Espacios from "./components/Espacios/ItemListContainerEspacios"
