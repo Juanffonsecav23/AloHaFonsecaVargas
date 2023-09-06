@@ -35,7 +35,7 @@ function CheckOutForm({onHandleConfrim}) {
             <input className="input-Form" value={userData.apellido} name="apellido" type="text" onChange={onInputChange} />
         </div>
         <div>
-            <label style={{marginRight:"15px"}}>Email:</label>
+            <label style={{marginRight:"19px"}}>Email:</label>
             <input className="input-Form" value={userData.email} name="email" type="text"  onChange={onInputChange}/>
         </div>
         <div>

@@ -7,7 +7,7 @@ function getDataEspacios(){
   return new Promise ((resolve)=>{
     setTimeout(() => {
       resolve(espacios)
-    }, 2000);
+    }, 1000);
   })
 }
 

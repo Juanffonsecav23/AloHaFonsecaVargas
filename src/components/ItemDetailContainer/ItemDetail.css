@@ -28,7 +28,7 @@
   .card-detail_detail{
     display: flex;
     flex-direction: column;
-    justify-content: space-around;
+    justify-content: space-evenly;
     padding: 12px 8px;
   }
   
@@ -42,7 +42,6 @@
   .description{
     width: 600px;
     text-align: justify;
-    margin-top: 20px;
   }
   .InputCalendario{
     background-color: lightsalmon;
@@ -51,4 +50,15 @@
   }
   .ItemDetailTitle{
     color: orange;
+  }
+  .WhatsappButton{
+  color:white;
+  background-color: #0df053;
+  border-radius: 50px;
+  width: 400px;
+  padding: 10px;
+  margin-left: 20%;
+  }
+  .WhatsappButton:hover{
+    color: white;
   }

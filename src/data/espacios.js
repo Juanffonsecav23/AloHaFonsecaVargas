@@ -16,6 +16,24 @@ const espacios = [
         title:"Lavanderia",
         img:"https://placehold.co/400x200",
         description:"Lorem ipsum dolor sit amet, consectetur adipiscing elit."        
+    },
+    {
+        id:4,
+        title:"Parqueadero",
+        img:"https://placehold.co/400x200",
+        description:"Lorem ipsum dolor sit amet, consectetur adipiscing elit."
+    },
+    {
+        id:5,
+        title:"Comedor",
+        img:"https://placehold.co/400x200",
+        description:"Lorem ipsum dolor sit amet, consectetur adipiscing elit."        
+    },
+    {
+        id:6,
+        title:"Lavanderia",
+        img:"https://placehold.co/400x200",
+        description:"Lorem ipsum dolor sit amet, consectetur adipiscing elit."        
     }
 ]
 export default espacios;

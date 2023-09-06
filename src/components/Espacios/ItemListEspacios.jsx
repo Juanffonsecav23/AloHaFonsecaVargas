@@ -7,7 +7,7 @@ function ItemListEspacios({isLoading , espacios}) {
     if (isLoading) return <Loader/>
 
     else return (
-        <Flex>
+        <Flex title={"Espacios"}>
             {espacios.map((itemInArray)=>(
                 <ItemEspacios key={itemInArray.id}{...itemInArray}/>
             ))}

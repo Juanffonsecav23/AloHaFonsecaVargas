@@ -1,0 +1,18 @@
+.sectionTitle{
+    color: var(--naranja-titulos);
+    margin-left: 10px;
+    margin-bottom:40px; 
+}
+.boxReglas{
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: 1fr 1fr 1fr 1fr;
+    gap: 30px;
+    margin-top: 50px;
+}
+.itemReglas{
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: center;
+    align-items: center;
+}

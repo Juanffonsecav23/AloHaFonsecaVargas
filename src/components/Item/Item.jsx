@@ -1,5 +1,5 @@
 /* eslint-disable react/prop-types */
-import { useState } from "react";
+/* import { useState } from "react";*/
 import "./Item.css";
 import { Link } from "react-router-dom";
 import Button from "../Button/Button";
@@ -16,7 +16,7 @@ function CardDescription({ price, category}) {
 }
 
 function Item({ title, img, price, category, id, capacidad }) {
-  const [isFavorite, setIsFavorite] = useState(false);
+/*   const [isFavorite, setIsFavorite] = useState(false);
   let classNameFavorite;
 
   if (isFavorite === false) {
@@ -29,7 +29,7 @@ function Item({ title, img, price, category, id, capacidad }) {
     event.preventDefault();
     event.stopPropagation();
     setIsFavorite(!isFavorite);
-  }
+  } */
 
   const stylesButton = {
     backgroundColor: capacidad === 0 ? "grey" : "inherit",
@@ -42,14 +42,13 @@ function Item({ title, img, price, category, id, capacidad }) {
       <img src={img} alt="imagen"></img>
       </div>
       <div className="item-card_header">
-        <span><button onClick={handleClickFav} className={classNameFavorite}>♥</button></span>
+{/*<span><button onClick={handleClickFav} className={classNameFavorite}>♥</button></span>*/}        
         <h5>{title}</h5> 
         <small>{category}</small>
-        {/* <small><p>{description}</p></small> */}
+{/* <small><p>{description}</p></small> */}
         <CardDescription price={(price).toFixed(3)}   />
         <Button className="btn-ver-detalles" style={stylesButton}>Ver detalles</Button> 
       </div>
-
     </div>
     </Link >
   );

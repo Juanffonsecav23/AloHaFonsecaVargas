@@ -3,7 +3,7 @@ import { useContext, useEffect, useState } from "react";
 import "./ItemDetail.css";
 /* import ItemCount from "../ItemCount/ItemCount"; */
 
-import { Link, useParams, useNavigate } from "react-router-dom";
+import {  useParams, useNavigate } from "react-router-dom";
 import Loader from "../Loader/Loader";
 /* import { cartContext } from "../../context/cartContext";*/
 import { getRoomData } from "../../services/Firebase";
@@ -83,16 +83,15 @@ if (room) {
   return (
     <div className="cardDetail">
       <div className="card-detail_img">
-        <Carrousel>
-        <img src={room.img} alt={room.title} />
-        <img src={room.img1} alt={room.title}/>
-        <img src={room.img2} alt={room.title}/>
-        <img src={room.img3} alt={room.title} />
+        <Carrousel >
+        <img src={room.img}  alt={room.title} style={{height:"550px"}}/>
+        <img src={room.img1} alt={room.title} style={{height:"550px"}}/>
+        <img src={room.img2} alt={room.title} style={{height:"550px"}}/>
+        <img src={room.img3} alt={room.title} style={{height:"550px"}}/>
         </Carrousel>
       </div>
       <div className="card-detail_detail">
         <h1 className="ItemDetailTitle">{room.title}</h1>
-        
         <p className="description">{room.description}</p>
       {/*  <Flex>
         <label>Check In</label>
@@ -102,13 +101,13 @@ if (room) {
         <span><input type="date" className="InputCalendario" onChange={handleDateChangeIn} value={selectedDateIn}></input></span>
         <span><input type="date" className="InputCalendario" onChange={handleDateChangeOut} value={selectedDateOut}></input></span>
         </Flex> */}
-        <h3 style={{marginTop: "20px"}}>$ {(room.price).toFixed(3)} Cop / Noche</h3>
+        <h3>$ {(room.price).toFixed(3)} Cop / Noche</h3>
       {/* {countInCart === 0 ? (
           <ItemCount onAddToCart={onAddToCart} stock={room.capacidad} />
           ) : (
             <Link to="/cart" style={{color:"orange"}}>Ir a las reservas</Link> 
             )} */}
-            <Link to="/cart" style={{color:"orange"}}>Ir a las reservas</Link> 
+            <a href="https://api.whatsapp.com/send?phone=573212402566" target="_blank" rel="noreferrer"  className="WhatsappButton"><img src="/src/assets/iconos/whatsapp.svg" alt="" style={{width:"40px", marginRight:"5px"}}/>Reserva por Whatsapp</a> 
       </div>
     </div>
   );

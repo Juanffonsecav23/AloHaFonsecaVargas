@@ -1,5 +1,6 @@
 import QuienesSomos from "../QuienesSomos/QuienesSomos"
 import ItemListContainer from "../ItemListContainer/itemListContainer"
+import Reglas from "../RyR/Reglas"
 
 function Homepage() {
   return (
@@ -7,6 +8,7 @@ function Homepage() {
         <img src='/imgRooms/casablancadenoceh.jpeg'/>
         <QuienesSomos/>
         <ItemListContainer/>
+        <Reglas/>
       </div>
   )
 }

@@ -71,5 +71,4 @@ export async function exportDataWithBatch(){
     batch.set(docRef , room);
   }
   await batch.commit();
-  console.log("items Guardados");
 }
