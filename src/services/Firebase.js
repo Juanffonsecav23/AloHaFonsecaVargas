@@ -45,8 +45,19 @@ export async function getCategoryData(categoryId) {
   return dataDocs;
 }
 
+export async function getEspaciosData() {
+  const espaciosCollectionRef = collection(db, "espacios");
+  const q = query(espaciosCollectionRef);
+  const espaciosSnapshot = await getDocs(q);
+  const arrayDocs = espaciosSnapshot.docs;
+  const dataDocs = arrayDocs.map(doc=> {
+    return {...doc.data(), id: doc.id}
+  });
+  return dataDocs
+}
+
 export async function createOrder(data) {
-  const ordersCollectionRef = collection(db, "orders");
+  const ordersCollectionRef = collection(db, "solicitudes");
   const response = await addDoc(ordersCollectionRef, data);
   return response.id;
 }
