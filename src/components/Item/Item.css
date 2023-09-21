@@ -25,12 +25,7 @@ a{
     font-size: large;
     padding-bottom: 12px;
   }
-  
-  .item-card_header h2{
-    padding: 16px 2px 0px;
-    margin: 0px;
-  }
-  
+    
   .item-card_header small{
     font-size: 12px;
   }
@@ -88,9 +83,11 @@ a{
   }
   .btn-ver-detalles{
     margin-left: 5px;
-    background-color: lightsalmon;
+    background-color: white;
+    color: orange;
+    border: solid orange;
     border-radius: 50px;
   }
   .btn-ver-detalles:hover{
-    color: white;
+    color: orange;
   }

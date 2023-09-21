@@ -8,14 +8,14 @@ import Flex from "../Flex/Flex";
 import CheckOutForm from "../CheckOutForm/CheckOutForm";
 
 function CartView() {
-    const {cart , removeItem , clearCart , countTotalPrice } = useContext(cartContext)
+    const {cart , removeItem , clearCart , /* countTotalPrice */ } = useContext(cartContext)
     const navigateToRoomReservation = useNavigate() 
     async function handleConfirm(userData) {
         const order = {
-            items: cart  ,
+            // items: cart  ,
             buyer:userData ,
             date: new Date(),
-            price: countTotalPrice()
+            //price: countTotalPrice()
         }
         const id =  await createOrder(order)
         clearCart();

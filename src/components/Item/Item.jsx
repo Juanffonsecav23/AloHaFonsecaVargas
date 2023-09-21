@@ -43,9 +43,8 @@ function Item({ title, img, price, category, id, capacidad }) {
       </div>
       <div className="item-card_header">
 {/*<span><button onClick={handleClickFav} className={classNameFavorite}>♥</button></span>*/}        
-        <h5>{title}</h5> 
-        <small>{category}</small>
-{/* <small><p>{description}</p></small> */}
+        <h5 style={{marginLeft: "5px"}}>{title}</h5> 
+        <small style={{marginLeft: "5px"}}>{category}</small>
         <CardDescription price={(price).toFixed(3)}   />
         <Button className="btn-ver-detalles" style={stylesButton}>Ver detalles</Button> 
       </div>

@@ -52,13 +52,14 @@
     color: orange;
   }
   .WhatsappButton{
-  color:white;
-  background-color: #0df053;
+  color:#0df053;
+  background-color: white;
+  border: solid #0df053;
   border-radius: 50px;
   width: 400px;
   padding: 10px;
   margin-left: 20%;
   }
   .WhatsappButton:hover{
-    color: white;
+    color: #0df053;
   }
