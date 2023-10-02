@@ -8,9 +8,10 @@ import Flex from "../Flex/Flex";
 import CheckOutForm from "../CheckOutForm/CheckOutForm";
 
 function CartView() {
-    const {cart , removeItem , clearCart , /* countTotalPrice */ } = useContext(cartContext)
+    const {cart , removeItem , /* clearCart */ /* countTotalPrice */ } = useContext(cartContext)
     const navigateToRoomReservation = useNavigate() 
-    async function handleConfirm(userData) {
+
+    async function HandleConfirm(userData) {
         const order = {
             // items: cart  ,
             buyer:userData ,
@@ -18,7 +19,6 @@ function CartView() {
             //price: countTotalPrice()
         }
         const id =  await createOrder(order)
-        clearCart();
         navigateToRoomReservation(`/order-confirmation/${id}`)
     }
 
@@ -46,7 +46,7 @@ function CartView() {
                     </ul>
                 
                 </ul>
-                <CheckOutForm onHandleConfrim={handleConfirm} />
+                <CheckOutForm onHandleConfrim={HandleConfirm} />
                 <Flex>
                 <button onClick={clearCart} style={{backgroundColor:"red"}} >Vaciar carrito</button>
                 </Flex>

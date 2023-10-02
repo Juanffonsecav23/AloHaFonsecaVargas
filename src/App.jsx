@@ -26,7 +26,7 @@ function App() {
           <Route path="/room/:id" element={<ItemDetailContainer/>}/>
           <Route path="/category/:categoryId" element={<ItemListContainer/>}/>
 {/*       <Route path="/cart" element={<CartView/>}/> */}          
-          <Route path="/order-confirmation/:orderid" element={<OrderVerify/>}></Route>
+          <Route path="/messageConfirmation/:orderid" element={<OrderVerify/>}></Route>
           <Route path="/Espacios" element={<Espacios/>}/>
           <Route path="/ReglasyRecomendaciones" element={<Reglas/>}/>
           <Route path="/Contacto" element={<CheckOutForm/>}/>

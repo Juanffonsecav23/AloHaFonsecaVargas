@@ -1,9 +1,37 @@
 /* eslint-disable react/prop-types */
 import { useState } from "react"
 import "./CheckOutForm.css"
+import { createOrder } from "../../services/Firebase";
+import { useNavigate } from "react-router-dom";
+import Swal from "sweetalert2";
 
-function CheckOutForm({onHandleConfrim}) {
 
+
+
+function CheckOutForm() {
+
+    const navigateToMessageConfirmation = useNavigate();
+
+    const showAlert = () => {
+    Swal.fire({
+        title: 'Solicitud envida con exito',
+        icon: 'success',
+        iconColor: "orange",
+        focusConfirm: true,
+        confirmButtonText: 'OK',
+        confirmButtonColor: "orange"
+    })
+    }
+
+
+    async function onHandleConfrim (userData){
+        const order ={
+            buyer: userData,
+            date: new Date(),
+        }
+        const id = await createOrder(order)
+        navigateToMessageConfirmation(`/messageConfirmation/${id}`)
+    }
     const [userData , setUserData] = useState({
         nombre: "",
         apellido:"",
@@ -21,7 +49,8 @@ function CheckOutForm({onHandleConfrim}) {
     }
     function onSubmit(evt) {
         evt.preventDefault();
-        onHandleConfrim(userData)
+        onHandleConfrim(userData);
+        showAlert();
     }
 
 return (
@@ -40,15 +69,17 @@ return (
             <input className="input-Form" value={userData.email} name="email" type="text"  onChange={onInputChange}/>
         </div>
         <div>
-            <label style={{marginRight:"13px"}}>Telefono:</label>
+            <label style={{marginRight:"14px"}}>Telefono:</label>
             <input className="input-Form" value={userData.phone} name="phone" type="text" onChange={onInputChange}/>
         </div>
         <div>
             <p style={{marginTop:"10px" , marginBottom:"0"}}>Comentario:</p>
-            <textarea cols={30} rows={10} className="input-Form" style={{marginBottom:"10px"}} name="comentario" onChange={onInputChange}></textarea>
+            <textarea cols={27} rows={10} className="input-Form" style={{marginBottom:"10px"}} name="comentario" onChange={onInputChange}></textarea>
         </div>
         <button style={{backgroundColor:"orange" , width:"100%"}} onClick={onSubmit}>Enviar</button>
     </div> )
 
-  }
+    }
+
+
 export default CheckOutForm

@@ -16,8 +16,9 @@ function OrderVerify() {
       <div className="icon-fix"></div>
       </div>
       </div>
-      <h2>Gracias por tu reserva</h2>
-      <small>Este es tu comprobante de compra: {orderid}</small>
+      <p>Este es el comprobante de tu solicitud:{orderid}</p>
+      <h2 style={{marginTop:"30px"}}>Gracias por contactarte con nosotros</h2>
+      <h4>Pronto nos pondremos en contacto contigo</h4>
     </div>
   )
 }
