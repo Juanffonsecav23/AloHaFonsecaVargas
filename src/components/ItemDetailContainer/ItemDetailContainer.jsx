@@ -1,16 +1,17 @@
 /* AsyncMock - servicioMock / backend/nube/api */
-import { useContext, useEffect, useState } from "react";
+import {  useEffect, useState } from "react";
 import "./ItemDetail.css";
 /* import ItemCount from "../ItemCount/ItemCount"; */
 
-import {  useParams, useNavigate } from "react-router-dom";
+import {  useParams, } from "react-router-dom";
 import Loader from "../Loader/Loader";
 /* import { cartContext } from "../../context/cartContext";*/
 import { getRoomData } from "../../services/Firebase";
 import Carrousel from "../Carrousel/Carrousel";
-import Swal from "sweetalert2"
-/* import Flex from "../Flex/Flex"; */
-/* import { differenceInDays, parseISO } from "date-fns"; */
+import CheckOutForm from "../CheckOutForm/CheckOutForm";
+//import Swal from "sweetalert2"
+// import Flex from "../Flex/Flex"; 
+// import { differenceInDays, parseISO } from "date-fns"; 
 
 
 function ItemDetailContainer() {
@@ -21,9 +22,10 @@ function ItemDetailContainer() {
   const [numberOfDays , setNumerOfDays] = useState(0)
   const [countInCart, setCountInCart] = useState(0);
   const { addItem} = useContext(cartContext);
- */  const navigate = useNavigate();
+ */  
+  //const navigate = useNavigate();
 
-  const showAlert = () => {
+  /* const showAlert = () => {
     Swal.fire({
       title: 'Reserva agregada con exito',
       icon: 'success',
@@ -32,13 +34,13 @@ function ItemDetailContainer() {
       confirmButtonText: 'Ir a la reserva',
       confirmButtonColor: "orange"
     }).then((result) => {
-      /* verificamos que el resultado sea de confirmación, si el usuario presiona el botón, entonces será true */
+      // verificamos que el resultado sea de confirmación, si el usuario presiona el botón, entonces será true 
       if (result.isConfirmed) {
-        /* Si es true, entonces ejecutamos el navigate, indicando la ruta */
+        // Si es true, entonces ejecutamos el navigate, indicando la ruta 
         navigate("/cart");
       }
     })
-  }
+  } */
   
 /*   const handleDateChangeIn = (event) => {
     const dateIn = event.target.value;
@@ -81,34 +83,37 @@ return (
 
 if (room) {
   return (
-    <div className="cardDetail">
-      <div className="card-detail_img">
-        <Carrousel >
-        <img src={room.img}  alt={room.title} style={{height:"550px"}}/>
-        <img src={room.img1} alt={room.title} style={{height:"550px"}}/>
-        <img src={room.img2} alt={room.title} style={{height:"550px"}}/>
-        <img src={room.img3} alt={room.title} style={{height:"550px"}}/>
-        </Carrousel>
+    <div>
+      <div className="cardDetail">
+        <div className="card-detail_img">
+          <Carrousel >
+          <img src={room.img}  alt={room.title} style={{height:"550px"}}/>
+          <img src={room.img1} alt={room.title} style={{height:"550px"}}/>
+          <img src={room.img2} alt={room.title} style={{height:"550px"}}/>
+          <img src={room.img3} alt={room.title} style={{height:"550px"}}/>
+          </Carrousel>
+        </div>
+        <div className="card-detail_detail">
+          <h1 className="ItemDetailTitle">{room.title}</h1>
+          <p className="description">{room.description}</p>
+        {/*  <Flex>
+          <label>Check In</label>
+          <label>Check Out</label>
+          </Flex>
+          <Flex>
+          <span><input type="date" className="InputCalendario" onChange={handleDateChangeIn} value={selectedDateIn}></input></span>
+          <span><input type="date" className="InputCalendario" onChange={handleDateChangeOut} value={selectedDateOut}></input></span>
+          </Flex> */}
+          <h3>$ {(room.price).toFixed(3)} Cop / Noche</h3>
+        {/* {countInCart === 0 ? (
+            <ItemCount onAddToCart={onAddToCart} stock={room.capacidad} />
+            ) : (
+              <Link to="/cart" style={{color:"orange"}}>Ir a las reservas</Link>
+              )} */}
+              <a href="https://api.whatsapp.com/send?phone=573212402566" target="_blank" rel="noreferrer"  className="WhatsappButton"><img src="/src/assets/iconos/whatsappVerde.svg" alt="" style={{width:"40px", marginRight:"5px"}}/>Reserva por Whatsapp</a>
+        </div>
       </div>
-      <div className="card-detail_detail">
-        <h1 className="ItemDetailTitle">{room.title}</h1>
-        <p className="description">{room.description}</p>
-      {/*  <Flex>
-        <label>Check In</label>
-        <label>Check Out</label>
-        </Flex>
-        <Flex>
-        <span><input type="date" className="InputCalendario" onChange={handleDateChangeIn} value={selectedDateIn}></input></span>
-        <span><input type="date" className="InputCalendario" onChange={handleDateChangeOut} value={selectedDateOut}></input></span>
-        </Flex> */}
-        <h3>$ {(room.price).toFixed(3)} Cop / Noche</h3>
-      {/* {countInCart === 0 ? (
-          <ItemCount onAddToCart={onAddToCart} stock={room.capacidad} />
-          ) : (
-            <Link to="/cart" style={{color:"orange"}}>Ir a las reservas</Link> 
-            )} */}
-            <a href="https://api.whatsapp.com/send?phone=573212402566" target="_blank" rel="noreferrer"  className="WhatsappButton"><img src="/src/assets/iconos/whatsappVerde.svg" alt="" style={{width:"40px", marginRight:"5px"}}/>Reserva por Whatsapp</a> 
-      </div>
+      <CheckOutForm/>
     </div>
   );
 }else {

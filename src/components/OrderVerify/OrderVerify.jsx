@@ -1,4 +1,4 @@
-import { useParams } from "react-router-dom"
+import { Link, useParams } from "react-router-dom"
 import "../../services/Firebase"
 import "./OrderVerify.css"
 
@@ -19,6 +19,7 @@ function OrderVerify() {
       <p>Este es el comprobante de tu solicitud:{orderid}</p>
       <h2 style={{marginTop:"30px"}}>Gracias por contactarte con nosotros</h2>
       <h4>Pronto nos pondremos en contacto contigo</h4>
+      <button className="homePB"><Link to={"/"}>Ir al inicio</Link></button>
     </div>
   )
 }
