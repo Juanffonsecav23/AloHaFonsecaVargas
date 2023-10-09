@@ -10,16 +10,6 @@ export default function Navbar () {
                     <li>
                         <NavLink to="/"><img src="/imgRooms/LogoAloHaEnBlanco.png" alt="Logo" className='logo'/></NavLink>
                     </li>
-                    {/* <div className="dropdown ">
-                        <button  className="dropdownColor" type="button" data-bs-toggle="dropdown" aria-expanded="false">
-                          <NavLink to="/habitaciones">Habitaciones ▼</NavLink>
-                        </button>
-                        <ul className="dropdown-menu">
-                          <li><NavLink className="dropdown-item" to="/category/Baño Privado">Baño Privado</NavLink></li>
-                          <li><NavLink className="dropdown-item" to="/category/Baño Compartido">Baño Compartido</NavLink></li>
-                          <li><NavLink className="dropdown-item" to="/category/Aparta Estudio">Aparta Estudios</NavLink></li>
-                        </ul>
-                    </div> */}
                     <li className="dropdown itemList tres">
                         <button className="dropbtn"><NavLink to="/habitaciones" className="itemListLink">Habitaciones ▼</NavLink></button>
                         <div className="dropdown-content">
@@ -32,7 +22,7 @@ export default function Navbar () {
                         <NavLink to="/Espacios">Espacios</NavLink>
                     </li>
                     <li>
-                        <NavLink to="/ReglasyRecomendaciones">Reglas/Recomendaciones</NavLink>
+                        <NavLink to="/ReglasyRecomendaciones">Reglas</NavLink>
                     </li>
                     <li>
                         <NavLink to="/Contacto">Contacto</NavLink>

@@ -9,7 +9,7 @@ import OrderVerify from "./components/OrderVerify/OrderVerify"
 import WhatsappButton from "./components/WhatsappButton/WhatsappButton"
 import Espacios from "./components/Espacios/ItemListContainerEspacios"
 import Reglas from "./components/RyR/Reglas"
-import CheckOutForm from "./components/CheckOutForm/CheckOutForm"
+import Contacto from "./components/Contacto/Contacto"
 
 
 
@@ -29,7 +29,7 @@ function App() {
           <Route path="/messageConfirmation/:orderid" element={<OrderVerify/>}></Route>
           <Route path="/Espacios" element={<Espacios/>}/>
           <Route path="/ReglasyRecomendaciones" element={<Reglas/>}/>
-          <Route path="/Contacto" element={<CheckOutForm/>}/>
+          <Route path="/Contacto" element={<Contacto/>}/>
           <Route path="*" element={<h1 style={{marginLeft:"30%"}}>Error 404 : Page not found</h1>}/>
         </Routes>
         <WhatsappButton/>

@@ -9,7 +9,7 @@ function CardDescription({ price, category}) {
   
   return (
     <div className="item-card_detail">
-      <h5 className="item-card_price-tag">$ {price}  COP / Noche</h5>
+      <h5 className="item-card_price-tag">$ {price}  COP / Mes</h5>
       <small>{category}</small>
     </div>
   );
@@ -45,7 +45,7 @@ function Item({ title, img, price, category, id, capacidad }) {
 {/*<span><button onClick={handleClickFav} className={classNameFavorite}>♥</button></span>*/}        
         <h5 style={{marginLeft: "5px"}}>{title}</h5> 
         <small style={{marginLeft: "5px"}}>{category}</small>
-        <CardDescription price={(price).toFixed(3)}   />
+        <CardDescription price={(price)}   />
         <Button className="btn-ver-detalles" style={stylesButton}>Ver detalles</Button> 
       </div>
     </div>

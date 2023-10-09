@@ -104,7 +104,7 @@ if (room) {
           <span><input type="date" className="InputCalendario" onChange={handleDateChangeIn} value={selectedDateIn}></input></span>
           <span><input type="date" className="InputCalendario" onChange={handleDateChangeOut} value={selectedDateOut}></input></span>
           </Flex> */}
-          <h3>$ {(room.price).toFixed(3)} Cop / Noche</h3>
+          <h3>$ {(room.price)} Cop / Mes</h3>
         {/* {countInCart === 0 ? (
             <ItemCount onAddToCart={onAddToCart} stock={room.capacidad} />
             ) : (

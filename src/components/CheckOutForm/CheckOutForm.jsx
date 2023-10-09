@@ -55,7 +55,7 @@ function CheckOutForm() {
 
 return (
     <div className="checkoutform-Container">
-        <h3>Deja tus datos y nosotros te contactamos</h3>
+        <h3>Para mas información dejanos tus datos y te contactaremos</h3>
         <div>
             <label>Nombre(s):</label>
             <input className="input-Form" value={userData.nombre} name="nombre" type="text" onChange={onInputChange} />
