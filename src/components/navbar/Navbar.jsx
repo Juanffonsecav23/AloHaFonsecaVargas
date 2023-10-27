@@ -8,24 +8,24 @@ export default function Navbar () {
             <nav className="header">
                 <ul className="navbarFV">
                     <li>
-                        <NavLink to="/"><img src="/imgRooms/LogoAloHaEnBlanco.png" alt="Logo" className='logo'/></NavLink>
+                        <NavLink to="/"><img src="/imgRooms/LogoAloHaEnBlanco.svg" alt="Logo" className='logo' style={{width:"80px" , height:"80px"}}/></NavLink>
                     </li>
                     <li className="dropdown itemList tres">
                         <button className="dropbtn"><NavLink to="/habitaciones" className="itemListLink">Habitaciones ▼</NavLink></button>
                         <div className="dropdown-content">
-                        <NavLink to="/category/Baño Privado" className="itemListLink tres itemList dropdownItems" >Baño Privado</NavLink>
-                        <NavLink to="/category/Baño Compartido" className="itemListLink tres itemList dropdownItems" >Baño Compartido</NavLink>
-                        <NavLink to="/category/Aparta Estudio" className="itemListLink tres itemList dropdownItems" >Aparta Estudios</NavLink>
+                        <NavLink to="/category/Baño Privado" className="navbarItem" >Baño Privado</NavLink>
+                        <NavLink to="/category/Baño Compartido" className="navbarItem" >Baño Compartido</NavLink>
+                        <NavLink to="/category/Aparta Estudio" className="navbarItem" >Aparta Estudios</NavLink>
                         </div>
                         </li>
                     <li>
-                        <NavLink to="/Espacios">Espacios</NavLink>
+                        <NavLink to="/Espacios" className="navbarItem">Espacios</NavLink>
                     </li>
                     <li>
-                        <NavLink to="/ReglasyRecomendaciones">Reglas</NavLink>
+                        <NavLink to="/ReglasyRecomendaciones" className="navbarItem">Reglas</NavLink>
                     </li>
                     <li>
-                        <NavLink to="/Contacto">Contacto</NavLink>
+                        <NavLink to="/Contacto" className="navbarItem">Contacto</NavLink>
                     </li>
                 </ul>
             </nav>

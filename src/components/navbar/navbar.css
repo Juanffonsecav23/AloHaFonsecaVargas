@@ -67,3 +67,6 @@ nav{
 .dropdown:hover .dropbtn {
   box-shadow: inset;
 }
+.navbarItem{
+  font-family: 'Merriweather', serif;
+}

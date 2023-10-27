@@ -6,7 +6,7 @@ function Footer() {
   return (
     <div>
       <footer className="footer">
-      <img src="/public/imgRooms/LogoAloHaEnBlanco.png" alt="" style={{width:"50px", height:"50px", marginLeft:"25px"}} />
+      <img src="/imgRooms/LogoAloHaEnBlanco.svg" alt="" style={{width:"80px", height:"80px", marginLeft:"25px"}} />
       <ul className="socialIcon">
         <li className="socialIconItem"><a className="socialIconLink" href="https://www.facebook.com/profile.php?id=100087745636618">
           <Icon icon="ic:baseline-facebook" />
@@ -20,8 +20,8 @@ function Footer() {
       </ul>
       <ul className="menu">
         <li className="menuItem"><Link className="menuLink" to="/">Inicio</Link></li>
-        <li className="menuItem"><a className="menuLink" to="QuienesSomos">Quienes Somos</a></li>
-        <li className="menuItem"><a className="menuLink" to="Habitaciones">Habitaciones</a></li>
+        <li className="menuItem"><Link className="menuLink" to="/ReglasyRecomendaciones">Reglas</Link></li>
+        <li className="menuItem"><Link className="menuLink" to="/habitaciones">Habitaciones</Link></li>
         <li className="menuItem"><Link className="menuLink" to="/contacto">Contacto</Link></li>
       </ul>
       <p>© 2023 Juan Felipe Fonseca Vargas</p>

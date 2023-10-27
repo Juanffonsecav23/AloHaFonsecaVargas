@@ -9,6 +9,7 @@ import Loader from "../Loader/Loader";
 import { getRoomData } from "../../services/Firebase";
 import Carrousel from "../Carrousel/Carrousel";
 import CheckOutForm from "../CheckOutForm/CheckOutForm";
+/* import ItemListContainerEspacios from "../Espacios/ItemListContainerEspacios";*/
 //import Swal from "sweetalert2"
 // import Flex from "../Flex/Flex"; 
 // import { differenceInDays, parseISO } from "date-fns"; 
@@ -87,10 +88,10 @@ if (room) {
       <div className="cardDetail">
         <div className="card-detail_img">
           <Carrousel >
-          <img src={room.img}  alt={room.title} style={{height:"550px"}}/>
-          <img src={room.img1} alt={room.title} style={{height:"550px"}}/>
-          <img src={room.img2} alt={room.title} style={{height:"550px"}}/>
-          <img src={room.img3} alt={room.title} style={{height:"550px"}}/>
+          <img src={room.img}  style={{width:"580px" , height:"455px"}}  />
+          <img src={room.img1} style={{width:"580px" , height:"455px"}}  />
+          <img src={room.img2} style={{width:"580px" , height:"455px"}}  />
+          <img src={room.img3} style={{width:"580px" , height:"455px"}}  />
           </Carrousel>
         </div>
         <div className="card-detail_detail">
@@ -113,6 +114,7 @@ if (room) {
               <a href="https://api.whatsapp.com/send?phone=573212402566" target="_blank" rel="noreferrer"  className="WhatsappButton"><img src="/src/assets/iconos/whatsappVerde.svg" alt="" style={{width:"40px", marginRight:"5px"}}/>Reserva por Whatsapp</a>
         </div>
       </div>
+{/*       <ItemListContainerEspacios/> */}
       <CheckOutForm/>
     </div>
   );

@@ -3,3 +3,7 @@
     flex-flow: column nowrap;
     align-items: center;
 }
+.imgEspacios{
+    height: 400px;
+    width: 400px;
+}
