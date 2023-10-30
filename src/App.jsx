@@ -27,7 +27,6 @@ function App() {
           <Route path="/category/:categoryId" element={<ItemListContainer/>}/>
 {/*       <Route path="/cart" element={<CartView/>}/> */}          
           <Route path="/messageConfirmation/:orderid" element={<OrderVerify/>}></Route>
-          <Route path="/Espacios" element={<Espacios/>}/>
           <Route path="/ReglasyRecomendaciones" element={<Reglas/>}/>
           <Route path="/Contacto" element={<Contacto/>}/>
           <Route path="*" element={<h1 style={{marginLeft:"30%"}}>Error 404 : Page not found</h1>}/>

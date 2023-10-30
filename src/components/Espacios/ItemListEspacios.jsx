@@ -7,11 +7,11 @@ function ItemListEspacios({isLoading , espacios}) {
     if (isLoading) return <Loader/>
 
     else return (
-        <Flex title={"Espacios"}>
-            {espacios.map((itemInArray)=>(
-                <ItemEspacios key={itemInArray.id}{...itemInArray}/>
-            ))}
-        </Flex>
+            <Flex title={"Espacios"} color="white" >
+                {espacios.map((itemInArray)=>(
+                    <ItemEspacios key={itemInArray.id}{...itemInArray}/>
+                ))}
+            </Flex>
   )
 }
 

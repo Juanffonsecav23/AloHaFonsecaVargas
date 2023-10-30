@@ -1,0 +1,44 @@
+.buttonsContacto{
+    display: flex;
+    flex-flow: row nowrap;
+    justify-content: space-evenly;
+    margin: 20px 0 20px 0;
+}
+
+.Instagram{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 4rem;
+    width: 10rem;
+    color: white;
+    border-radius: 50px;
+    background:linear-gradient(115deg, #f9ce34, #ee2a7b, #6228d7) ;
+    transition: all 0.20s ease-in;
+}
+.Instagram:hover{
+    color: white;
+    box-shadow: 0px 4px 15px  rgba(0,0,0,0.1);
+    transform: translateY(-6px);
+}
+.Facebook{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 4rem;
+    width: 10rem;
+    color: white;
+    border-radius: 50px;
+    background-Color:#0000ff;
+    transition: all 0.20s ease-in;
+}
+.Facebook:hover{
+    color: white;
+    box-shadow: 0px 4px 15px  rgba(0,0,0,0.1);
+    transform: translateY(-6px);
+}
+.mapa{
+    display: flex;
+    justify-content: center;
+}
+

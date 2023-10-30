@@ -3,7 +3,7 @@ import { Icon } from '@iconify/react';
 
 function Reglas() {
   return (
-    <div>
+    <div style={{paddingTop:"100px"}}>
       <h1 className="sectionTitle">Reglas</h1>
       <p style={{margin:"0 20px 20px 20px"}}>En Aloha 152, nuestro objetivo es proporcionar una experiencia agradable para todos nuestros huéspedes. Para ayudar a mantener un ambiente armonioso en nuestras instalaciones, por favor siga estas normas:</p>
       <div className="boxReglas">
@@ -13,11 +13,11 @@ function Reglas() {
         </div>
         <div className="itemReglas">
         <Icon icon="material-symbols:smoke-free" className="icon" />
-          <p>Está estrictamente prohibido fumar en todas las áreas interiores. Hay áreas designadas para fumar al aire libre en las habitaciones con terraza privada.</p>
+          <p>Está estrictamente prohibido fumar en todas las áreas interiores.</p>
         </div>
         <div className="itemReglas">
           <Icon icon="icon-park-outline:exclusive-gateway" className="icon"/>
-          <p>Los baños en el primer piso están exclusivamente reservados para las habitaciones 1, 2 y 3.</p>
+          <p>Los baños del primer piso están exclusivamente reservados para las habitaciones 1, 2 y 3.</p>
         </div>
         <div className="itemReglas">
           <Icon icon="mdi:love" className="icon" />
@@ -25,7 +25,7 @@ function Reglas() {
         </div>
         <div className="itemReglas">
           <Icon icon="game-icons:silence" className="icon"/>
-          <p>No se permiten eventos ni fiestas.</p>
+          <p>No se permiten eventos ni fiestas, o musica con volumen que incomode o perturbe a los demas huespedes</p>
         </div>
         <div className="itemReglas">
           <Icon icon="game-icons:house-keys" className="icon" />
@@ -37,11 +37,15 @@ function Reglas() {
         </div>
         <div className="itemReglas">
           <Icon icon="solar:lightbulb-linear" className="icon"/>
-          <p>Por favor, recuerda apagar las luces cuando no las estés utilizando para ahorrar energía. Tu colaboración en este sentido es muy apreciada y contribuye a un entorno más sostenible y respetuoso con el medio ambiente para todos.</p>
+          <p>Por favor, recuerda apagar las luces cuando no las estés utilizando para ahorrar energía. Tu colaboración en este sentido es muy apreciada y contribuye a un entorno más sostenible y respetuoso con el medio ambiente.</p>
         </div>
         <div className="itemReglas">
           <Icon icon="mdi:door-closed-lock" className="icon" />
           <p>Para garantizar la seguridad de todos, te pedimos que siempre cierres la puerta con ambas cerraduras al entrar o salir. Utiliza la cerradura de arriba con llave y la cerradura digital de abajo.</p>
+        </div>
+        <div className="itemReglas">
+          <Icon icon="material-symbols:recycling-rounded" className="icon" />
+          <p>Utilizar adecuadamente los contenedores de reciclaje ubicados en el patio interno de la casa.</p>
         </div>
       </div>
     </div>

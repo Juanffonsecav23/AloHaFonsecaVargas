@@ -9,8 +9,9 @@
     justify-content: space-between;
     width: var(--uib-size);
     height: calc(var(--uib-size) * 0.17);
-    padding-top: calc(var(--uib-size) * 0.34);
-    margin: 25px 0 0 50%;
+    padding-top: calc(var(--uib-size) * 5);
+    margin: 0px 0 0 50%;
+
   }
   
   .dot-wave__dot {

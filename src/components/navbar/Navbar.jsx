@@ -4,7 +4,7 @@ import { NavLink } from 'react-router-dom';
 export default function Navbar () {
 
     return (
-        <div>
+        <div style={{position:"fixed", width:"100%"}}>
             <nav className="header">
                 <ul className="navbarFV">
                     <li>
@@ -18,9 +18,6 @@ export default function Navbar () {
                         <NavLink to="/category/Aparta Estudio" className="navbarItem" >Aparta Estudios</NavLink>
                         </div>
                         </li>
-                    <li>
-                        <NavLink to="/Espacios" className="navbarItem">Espacios</NavLink>
-                    </li>
                     <li>
                         <NavLink to="/ReglasyRecomendaciones" className="navbarItem">Reglas</NavLink>
                     </li>
