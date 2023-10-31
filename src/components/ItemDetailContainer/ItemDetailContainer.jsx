@@ -83,7 +83,7 @@ return (
 
 if (room) {
   return (
-    <div>
+    <div style={{paddingTop:"100px"}}>
       <div className="cardDetail">
         <div className="card-detail_img">
           <Carrousel >
