@@ -40,10 +40,10 @@ a{
     object-fit: cover;
   }
   
-  /* .item-card:hover{
+  .item-card:hover{
     box-shadow: 0px 4px 15px  rgba(0,0,0,0.1);
     transform: translateY(-6px);
-  } */
+  }
   
   .item-card_detail{
     padding: 12px 8px;

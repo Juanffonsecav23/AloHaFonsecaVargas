@@ -4,7 +4,7 @@ import { NavLink } from 'react-router-dom';
 export default function Navbar () {
 
     return (
-        <div style={{position:"fixed", width:"100%"}}>
+        <div style={{position:"fixed", width:"100%", zIndex:"10"}}>
             <nav className="header">
                 <ul className="navbarFV">
                     <li>
