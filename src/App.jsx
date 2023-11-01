@@ -7,7 +7,6 @@ import Footer from "./components/Footer/Footer"
 import { CartContextProvider } from "./context/cartContext"
 import OrderVerify from "./components/OrderVerify/OrderVerify"
 import WhatsappButton from "./components/WhatsappButton/WhatsappButton"
-import Espacios from "./components/Espacios/ItemListContainerEspacios"
 import Reglas from "./components/RyR/Reglas"
 import Contacto from "./components/Contacto/Contacto"
 

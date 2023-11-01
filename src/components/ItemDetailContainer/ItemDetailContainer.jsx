@@ -9,6 +9,8 @@ import Loader from "../Loader/Loader";
 import { getRoomData } from "../../services/Firebase";
 import Carrousel from "../Carrousel/Carrousel";
 import CheckOutForm from "../CheckOutForm/CheckOutForm";
+import { BotonosRedes } from "../Contacto/Contacto";
+import { Icon } from "@iconify/react";
 //import Swal from "sweetalert2"
 // import Flex from "../Flex/Flex"; 
 // import { differenceInDays, parseISO } from "date-fns"; 
@@ -96,23 +98,11 @@ if (room) {
         <div className="card-detail_detail">
           <h1 className="ItemDetailTitle">{room.title}</h1>
           <p className="description">{room.description}</p>
-        {/*  <Flex>
-          <label>Check In</label>
-          <label>Check Out</label>
-          </Flex>
-          <Flex>
-          <span><input type="date" className="InputCalendario" onChange={handleDateChangeIn} value={selectedDateIn}></input></span>
-          <span><input type="date" className="InputCalendario" onChange={handleDateChangeOut} value={selectedDateOut}></input></span>
-          </Flex> */}
           <h3>$ {(room.price)} Cop / Mes</h3>
-        {/* {countInCart === 0 ? (
-            <ItemCount onAddToCart={onAddToCart} stock={room.capacidad} />
-            ) : (
-              <Link to="/cart" style={{color:"orange"}}>Ir a las reservas</Link>
-              )} */}
-              <a href="https://api.whatsapp.com/send?phone=573212402566" target="_blank" rel="noreferrer"  className="WhatsappButton"><img src="/src/assets/iconos/whatsappVerde.svg" alt="" style={{width:"40px", marginRight:"5px"}}/>Reserva por Whatsapp</a>
+          <a href="https://api.whatsapp.com/send?phone=573212402566" target="_blank" rel="noreferrer"  className="WhatsappButton"><Icon icon="ic:baseline-whatsapp"  width={50} height={50}/>Reserva por Whatsapp</a>
         </div>
       </div>
+      <BotonosRedes/>
       <CheckOutForm/>
     </div>
   );

@@ -4,7 +4,7 @@ import "./Contacto.css"
 
 export function BotonosRedes() {
   return(
-    <div style={{marginBottom:"30px"}}>
+    <div style={{marginBottom:"3rem",}}>
       <h3 style={{marginLeft:"30%" , color:"orange"}}>Encuentranos tambien en nuestras redes sociales</h3>
           <div className="buttonsContacto">
           <a href="" className="Instagram">

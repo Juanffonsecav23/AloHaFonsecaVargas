@@ -13,7 +13,7 @@ function Reglas() {
         </div>
         <div className="itemReglas">
         <Icon icon="material-symbols:smoke-free" className="icon" />
-          <p>Está estrictamente prohibido fumar en todas las áreas interiores.</p>
+          <p>Está estrictamente prohibido fumar en todas las áreas interiores según la resolución 1956 de 2008.</p>
         </div>
         <div className="itemReglas">
           <Icon icon="icon-park-outline:exclusive-gateway" className="icon"/>
